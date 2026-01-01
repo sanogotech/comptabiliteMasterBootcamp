@@ -1,1 +1,2720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Audit & Finance - Compétences Comptables et Financières</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accounting-color: #0ea5e9;
+            --finance-color: #10b981;
+            --audit-color: #8b5cf6;
+            --tax-color: #ef4444;
+            --management-color: #f59e0b;
+            --declaration-color: #6366f1;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-top: 1rem;
+            background-attachment: fixed;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-top: -1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quiz-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .quiz-header h1 {
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .quiz-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, var(--audit-color) 0%, var(--finance-color) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Progress & Score */
+        .progress-container {
+            margin-bottom: 2rem;
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        #question-counter {
+            font-weight: 600;
+            color: var(--accounting-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        #current-score {
+            font-weight: 600;
+            color: var(--finance-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--audit-color) 0%, var(--accounting-color) 100%);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Question Card */
+        #question-card {
+            border: none;
+            border-radius: 15px;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accounting-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #question-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+        }
+        
+        #question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .thematic-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border: 2px solid;
+        }
+
+        .badge-accounting {
+            background-color: rgba(14, 165, 233, 0.1);
+            border-color: var(--accounting-color);
+            color: var(--accounting-color);
+        }
+
+        .badge-finance {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-color: var(--finance-color);
+            color: var(--finance-color);
+        }
+
+        .badge-audit {
+            background-color: rgba(139, 92, 246, 0.1);
+            border-color: var(--audit-color);
+            color: var(--audit-color);
+        }
+
+        .badge-tax {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: var(--tax-color);
+            color: var(--tax-color);
+        }
+
+        .badge-management {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-color: var(--management-color);
+            color: var(--management-color);
+        }
+
+        .badge-declaration {
+            background-color: rgba(99, 102, 241, 0.1);
+            border-color: var(--declaration-color);
+            color: var(--declaration-color);
+        }
+
+        /* Options */
+        .option-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            background-color: white;
+            transition: all 0.3s ease;
+            font-family: 'Roboto Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn:hover:not([disabled]) {
+            border-color: var(--accounting-color);
+            background-color: #eff6ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+        }
+        
+        .option-btn.correct {
+            background-color: #f0fdf4;
+            border-color: var(--finance-color);
+            color: #065f46;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .option-btn.incorrect {
+            background-color: #fef2f2;
+            border-color: var(--tax-color);
+            color: #7f1d1d;
+            font-weight: 600;
+        }
+
+        /* Explanation Box */
+        #explanation-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            animation: fadeIn 0.5s ease;
+            border-left: 4px solid;
+        }
+        
+        #explanation-box h5 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .explanation-correct {
+            background-color: #f0fdf4;
+            border-left-color: var(--finance-color);
+        }
+
+        .explanation-incorrect {
+            background-color: #fef2f2;
+            border-left-color: var(--tax-color);
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-left: 4px solid var(--accounting-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .tip-box h6 {
+            color: var(--accounting-color);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-audit {
+            background: linear-gradient(135deg, var(--audit-color) 0%, var(--accounting-color) 100%);
+            color: white;
+            border: none;
+        }
+
+        /* Thematic Cards */
+        .theme-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--accounting-color);
+        }
+        
+        .theme-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accounting-color) 0%, var(--finance-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Modal Results */
+        .modal-header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            border-radius: 0;
+        }
+
+        .modal-title-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .final-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, var(--audit-color) 0%, var(--finance-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .score-text {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .skill-meter {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+            
+            .quiz-header {
+                padding: 2rem 1rem;
+            }
+            
+            .quiz-header h1 {
+                font-size: 2rem;
+            }
+            
+            #question-card {
+                padding: 1.5rem;
+            }
+            
+            .quiz-navigation {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
+        /* Finance elements */
+        .finance-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E€$£%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E%25‰%3C/text%3E%3Ctext x='70' y='60' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E§¶%3C/text%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .finance-badge {
+            background: linear-gradient(135deg, var(--audit-color) 0%, var(--finance-color) 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--accounting-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="finance-background"></div>
+    
+    <div class="container py-4">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1><i class="fas fa-file-invoice-dollar"></i> Quiz Audit & Finance <i class="fas fa-chart-line"></i></h1>
+                <p>Évaluez votre maîtrise des compétences comptables et financières pour devenir Auditrice Financière ou DAF</p>
+                <div class="year-badge">
+                    Objectif : Auditrice Financière / DAF | 3 ans | 120 Questions
+                </div>
+            </div>
+            
+            <!-- Configuration Panel -->
+            <div id="settings-panel" class="settings-panel">
+                <h4 class="text-center mb-4"><i class="fas fa-cogs"></i> Configuration du Quiz Audit & Finance</h4>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <label for="question-count" class="form-label">Nombre de questions :</label>
+                        <select id="question-count" class="form-select">
+                            <option value="20">20 questions (Rapide)</option>
+                            <option value="40" selected>40 questions (Standard)</option>
+                            <option value="60">60 questions (Complet)</option>
+                            <option value="120">120 questions (Expert - Objectif DAF)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button id="start-quiz-btn" class="btn btn-audit w-100 pulse-animation">
+                            <i class="fas fa-rocket"></i> Démarrer le Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><i class="fas fa-filter"></i> Domaines à Évaluer</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-accounting" checked>
+                                <label class="form-check-label" for="domain-accounting">
+                                    <i class="fas fa-calculator text-primary me-2"></i>Comptabilité Fondamentale
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-finance" checked>
+                                <label class="form-check-label" for="domain-finance">
+                                    <i class="fas fa-chart-line text-success me-2"></i>États Financiers
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-audit" checked>
+                                <label class="form-check-label" for="domain-audit">
+                                    <i class="fas fa-search-dollar text-purple me-2"></i>Audit & Contrôle
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-tax" checked>
+                                <label class="form-check-label" for="domain-tax">
+                                    <i class="fas fa-file-invoice-dollar text-danger me-2"></i>Fiscalité & Impôts
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-management" checked>
+                                <label class="form-check-label" for="domain-management">
+                                    <i class="fas fa-briefcase text-warning me-2"></i>Gestion d'Entreprise
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-declaration" checked>
+                                <label class="form-check-label" for="domain-declaration">
+                                    <i class="fas fa-file-alt text-indigo me-2"></i>Déclarations Obligatoires
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Thématiques -->
+                <div class="mt-4">
+                    <h5><i class="fas fa-brain"></i> 6 Domaines Clés pour Auditrice Financière / DAF</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-calculator"></i></div>
+                                <h6>Comptabilité</h6>
+                                <p class="small mb-2">PCG, Grands Livres, Balance, Comptes annuels, Amortissements</p>
+                                <div>
+                                    <span class="finance-badge">PCG</span>
+                                    <span class="finance-badge">Balance</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-chart-line"></i></div>
+                                <h6>États Financiers</h6>
+                                <p class="small mb-2">Bilan, Compte de résultat, Flux de trésorerie, Annexes</p>
+                                <div>
+                                    <span class="finance-badge">Bilan</span>
+                                    <span class="finance-badge">Résultat</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-search-dollar"></i></div>
+                                <h6>Audit & Contrôle</h6>
+                                <p class="small mb-2">Rapprochements, Mapping, Normes IAS/IFRS, Contrôles internes</p>
+                                <div>
+                                    <span class="finance-badge">IFRS</span>
+                                    <span class="finance-badge">Contrôle</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                                <h6>Fiscalité</h6>
+                                <p class="small mb-2">TVA, IS, CVAE, Impôt sur le revenu, Optimisation fiscale</p>
+                                <div>
+                                    <span class="finance-badge">TVA</span>
+                                    <span class="finance-badge">IS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-briefcase"></i></div>
+                                <h6>Gestion d'Entreprise</h6>
+                                <p class="small mb-2">Budget, Trésorerie, Analyse financière, Tableaux de bord</p>
+                                <div>
+                                    <span class="finance-badge">Budget</span>
+                                    <span class="finance-badge">Trésorerie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-file-alt"></i></div>
+                                <h6>Déclarations</h6>
+                                <p class="small mb-2">DAS2, DSN, Liasses fiscales, BODACC, Social & Urssaf</p>
+                                <div>
+                                    <span class="finance-badge">DSN</span>
+                                    <span class="finance-badge">Liasse</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Content -->
+            <div id="quiz-content" class="d-none">
+                <div class="progress-container">
+                     <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span id="question-counter">Question 1 / 40</span>
+                        <span id="current-score">Score: 0</span>
+                     </div>
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 2.5%;" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div id="question-card" class="card">
+                    <div class="card-body">
+                        <div class="thematic-badge badge-accounting" id="thematic-badge">Comptabilité</div>
+                        <h2 id="question-text">Chargement de la question...</h2>
+                        <div id="options-container">
+                            <!-- Les options seront insérées ici -->
+                        </div>
+                        <div id="explanation-box" class="d-none">
+                            <h5 id="explanation-title"></h5>
+                            <p id="explanation-text"></p>
+                            <div id="tip-box" class="tip-box d-none">
+                                <h6><i class="fas fa-lightbulb"></i> Pour devenir Auditrice/DAF</h6>
+                                <p id="tip-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="btn btn-outline-secondary nav-btn" disabled>
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <button id="next-btn" class="btn btn-audit nav-btn">
+                        Suivant <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="finish-btn" class="btn btn-success nav-btn d-none">
+                        <i class="fas fa-trophy"></i> Terminer & Voir les Résultats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Résultats -->
+    <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultsModalLabel">
+                        <i class="fas fa-chart-line modal-title-icon"></i>Résultats du Quiz Audit & Finance
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="score-text">Votre niveau pour devenir Auditrice/DAF :</h4>
+                        <p class="final-score" id="final-score-percentage">0%</p>
+                        <p class="text-muted fs-5">
+                            <span id="final-score-correct">0</span> bonnes réponses sur 
+                            <span id="final-score-total">0</span> questions
+                        </p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-calculator"></i> Compétences Techniques</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="tech-skills" class="progress-bar bg-primary" style="width: 0%;"></div>
+                                </div>
+                                <p id="tech-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-briefcase"></i> Compétences Managériales</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="strategic-skills" class="progress-bar bg-success" style="width: 0%;"></div>
+                                </div>
+                                <p id="strategic-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <div id="final-recommendations">
+                        <!-- Recommandations seront insérées ici -->
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5><i class="fas fa-road"></i> Roadmap vers Auditrice/DAF (3 ans)</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="alert alert-primary">
+                                    <h6><i class="fas fa-graduation-cap"></i> Année 1 : Renforcement</h6>
+                                    <p id="short-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6><i class="fas fa-rocket"></i> Années 2-3 : Perfectionnement</h6>
+                                    <p id="long-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> Fermer
+                    </button>
+                    <button type="button" class="btn btn-audit" id="restart-quiz-btn">
+                        <i class="fas fa-redo"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Questions Audit & Finance - 120 questions réparties en 6 thématiques
+        const quizData = {
+            questions: [
+                // ============ THÉMATIQUE 1: COMPTABILITÉ (20 questions) ============
+                {
+                    thematic: "Comptabilité",
+                    question: "Une entreprise achète un matériel informatique pour 5 000€ HT. La TVA est de 20%. Quel est le compte à débiter pour enregistrer cet achat ?",
+                    options: [
+                        "218 - Matériel informatique (pour 5 000€)",
+                        "218 - Matériel informatique (pour 6 000€)",
+                        "606 - Achats de matériel informatique (pour 5 000€)",
+                        "44566 - TVA déductible sur immobilisations (pour 1 000€)"
+                    ],
+                    correctAnswer: "218 - Matériel informatique (pour 5 000€)",
+                    explanation: "Le matériel informatique est une immobilisation corporelle (classe 2). On débite le compte 218 pour la valeur HT et on crédite le compte 44566 pour la TVA (1 000€).",
+                    tip: "Pour devenir auditrice, maîtrisez parfaitement le plan comptable général (PCG) et la distinction charges/immobilisations."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Quelle est la durée d'amortissement standard d'un véhicule de tourisme en comptabilité ?",
+                    options: [
+                        "4 à 5 ans",
+                        "8 à 10 ans",
+                        "3 ans",
+                        "10 à 15 ans"
+                    ],
+                    correctAnswer: "4 à 5 ans",
+                    explanation: "Les véhicules de tourisme s'amortissent généralement sur 4 à 5 ans (20-25% linéaire). Certains modèles électriques peuvent avoir des durées différentes pour des raisons fiscales.",
+                    tip: "L'audit des immobilisations nécessite de vérifier les durées d'amortissement et les méthodes appliquées."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Le compte '419 - Clients - Créances douteuses' fait partie de :",
+                    options: [
+                        "L'actif circulant",
+                        "Les capitaux propres",
+                        "Les provisions",
+                        "Les dettes"
+                    ],
+                    correctAnswer: "L'actif circulant",
+                    explanation: "Le compte 419 est un compte de régularisation de l'actif qui vient en diminution des créances clients. Il fait partie de l'actif circulant au bilan.",
+                    tip: "L'évaluation des créances douteuses est un point clé en audit financier."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Quel principe comptable impose de comptabiliser une provision pour risques dès que leur réalisation est probable ?",
+                    options: [
+                        "Principe de prudence",
+                        "Principe d'indépendance des exercices",
+                        "Principe du coût historique",
+                        "Principe de permanence des méthodes"
+                    ],
+                    correctAnswer: "Principe de prudence",
+                    explanation: "Le principe de prudence impose de comptabiliser les pertes probables (provisions) mais pas les gains potentiels.",
+                    tip: "L'auditeur doit vérifier le respect des principes comptables, notamment le principe de prudence."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Une entreprise réalise un emprunt de 100 000€ sur 5 ans. Les frais de dossier de 2 000€ doivent être :",
+                    options: [
+                        "Étalisés sur la durée de l'emprunt",
+                        "Comptabilisés en charges immédiatement",
+                        "Capitalisés dans le coût de l'emprunt",
+                        "Ignorés car non significatifs"
+                    ],
+                    correctAnswer: "Étalisés sur la durée de l'emprunt",
+                    explanation: "Les frais d'emprunt doivent être étalés sur la durée de l'emprunt (méthode actuarielle) selon les normes comptables.",
+                    tip: "L'audit des emprunts nécessite de vérifier l'étalement correct des frais et la comptabilisation des intérêts."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Quel est le journal obligatoire à tenir en comptabilité ?",
+                    options: [
+                        "Journal général",
+                        "Journal des achats seulement",
+                        "Journal des ventes seulement",
+                        "Aucun journal n'est obligatoire"
+                    ],
+                    correctAnswer: "Journal général",
+                    explanation: "Le journal général est obligatoire. Les journaux auxiliaires (achats, ventes, banque) sont facultatifs mais recommandés.",
+                    tip: "En audit, la tenue des journaux et leur concordance avec la balance est vérifiée."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Le compte '465 - Charges constatées d'avance' est :",
+                    options: [
+                        "Un compte de régularisation de l'actif",
+                        "Un compte de régularisation du passif",
+                        "Un compte de charges",
+                        "Un compte de produits"
+                    ],
+                    correctAnswer: "Un compte de régularisation de l'actif",
+                    explanation: "Les charges constatées d'avance représentent des charges payées mais concernant l'exercice suivant. C'est un compte d'actif.",
+                    tip: "Les régularisations (charges et produits constatés d'avance) sont des points sensibles en audit de fin d'exercice."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Quelle écriture comptable pour un achat de marchandises 10 000€ HT, TVA 20%, payé à 30 jours ?",
+                    options: [
+                        "Débit 607 (10 000€), Débit 44566 (2 000€), Crédit 401 (12 000€)",
+                        "Débit 607 (12 000€), Crédit 401 (12 000€)",
+                        "Débit 401 (12 000€), Crédit 512 (12 000€)",
+                        "Débit 607 (10 000€), Crédit 401 (10 000€)"
+                    ],
+                    correctAnswer: "Débit 607 (10 000€), Débit 44566 (2 000€), Crédit 401 (12 000€)",
+                    explanation: "Achat de marchandises en compte 607 (charges), TVA déductible en 44566, fournisseur en crédit 401.",
+                    tip: "Maîtriser les écritures comptables de base est essentiel pour analyser les états financiers."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "La différence entre l'actif et le passif d'une entreprise représente :",
+                    options: [
+                        "Les capitaux propres",
+                        "Le résultat de l'exercice",
+                        "La trésorerie",
+                        "Le fonds de roulement"
+                    ],
+                    correctAnswer: "Les capitaux propres",
+                    explanation: "Actif = Passif + Capitaux propres. Donc Capitaux propres = Actif - Passif.",
+                    tip: "L'équation fondamentale du bilan est la base de toute analyse financière."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Une provision pour litige doit être comptabilisée :",
+                    options: [
+                        "Dès que le litige est probable et que son montant peut être estimé",
+                        "Seulement après la décision de justice",
+                        "Lorsque le litige est certain",
+                        "Jamais, c'est un événement exceptionnel"
+                    ],
+                    correctAnswer: "Dès que le litige est probable et que son montant peut être estimé",
+                    explanation: "Selon le principe de prudence, une provision doit être comptabilisée quand l'obligation est probable et le montant estimable.",
+                    tip: "L'évaluation des provisions est un des points les plus complexes en audit."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Le compte '106 - Report à nouveau' contient :",
+                    options: [
+                        "Les bénéfices non distribués des exercices antérieurs",
+                        "Le résultat de l'exercice en cours",
+                        "Les réserves légales",
+                        "Les dividendes à payer"
+                    ],
+                    correctAnswer: "Les bénéfices non distribués des exercices antérieurs",
+                    explanation: "Le report à nouveau représente les bénéfices des exercices antérieurs qui n'ont été ni distribués ni mis en réserve.",
+                    tip: "Comprendre la structure des capitaux propres est crucial pour analyser la santé financière d'une entreprise."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Une société augmente son capital par apports en numéraire. Quel compte est crédité ?",
+                    options: [
+                        "101 - Capital social",
+                        "109 - Actionnaires, capital souscrit non appelé",
+                        "512 - Banque",
+                        "104 - Prime d'émission"
+                    ],
+                    correctAnswer: "101 - Capital social",
+                    explanation: "L'augmentation de capital crédite le compte 101 (pour la valeur nominale) et éventuellement le compte 104 pour la prime d'émission.",
+                    tip: "Les opérations sur capital nécessitent une attention particulière en audit."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "La clôture de l'exercice comptable doit intervenir :",
+                    options: [
+                        "Dans les 6 mois maximum après la fin de l'exercice",
+                        "Dans les 3 mois maximum après la fin de l'exercice",
+                        "Le dernier jour de l'exercice",
+                        "Dans l'année suivant la fin de l'exercice"
+                    ],
+                    correctAnswer: "Dans les 6 mois maximum après la fin de l'exercice",
+                    explanation: "L'arrêté des comptes doit intervenir dans les 6 mois suivant la clôture de l'exercice, sauf exceptions.",
+                    tip: "Les délais de clôture sont importants pour planifier les missions d'audit."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Qu'est-ce que le principe d'intangibilité du bilan d'ouverture ?",
+                    options: [
+                        "Le bilan d'ouverture doit être identique au bilan de clôture précédent",
+                        "Le bilan ne peut pas être modifié",
+                        "Les actifs ne peuvent pas être cédés",
+                        "Les dettes doivent être payées à l'ouverture"
+                    ],
+                    correctAnswer: "Le bilan d'ouverture doit être identique au bilan de clôture précédent",
+                    explanation: "Ce principe assure la continuité des exercices comptables.",
+                    tip: "La continuité des soldes est vérifiée en audit pour assurer la cohérence des états financiers."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Une immobilisation acquise à crédit est enregistrée :",
+                    options: [
+                        "À sa valeur d'acquisition HT",
+                        "À sa valeur d'acquisition TTC",
+                        "À sa valeur de revente",
+                        "À sa valeur actualisée"
+                    ],
+                    correctAnswer: "À sa valeur d'acquisition HT",
+                    explanation: "Les immobilisations sont comptabilisées à leur coût d'acquisition hors taxes récupérables.",
+                    tip: "L'évaluation des immobilisations à l'entrée est un point de contrôle important."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Quel compte utilise-t-on pour les avances et acomptes versés aux fournisseurs ?",
+                    options: [
+                        "409 - Fournisseurs débiteurs",
+                        "401 - Fournisseurs",
+                        "411 - Clients",
+                        "419 - Clients douteux"
+                    ],
+                    correctAnswer: "409 - Fournisseurs débiteurs",
+                    explanation: "Le compte 409 enregistre les avances et acomptes versés aux fournisseurs.",
+                    tip: "Les comptes de régularisation doivent faire l'objet d'une attention particulière en audit."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "La méthode de l'amortissement dégressif :",
+                    options: [
+                        "Est une option fiscale en France",
+                        "Est interdite en comptabilité",
+                        "Est obligatoire pour tous les biens",
+                        "N'existe plus depuis 2020"
+                    ],
+                    correctAnswer: "Est une option fiscale en France",
+                    explanation: "L'amortissement dégressif est une option fiscale permettant d'amortir plus vite les premiers années.",
+                    tip: "La divergence entre comptabilité et fiscalité est fréquente et doit être maîtrisée."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Le compte '661 - Charges d'intérêts' concerne :",
+                    options: [
+                        "Les intérêts des emprunts",
+                        "Les dividendes versés",
+                        "Les commissions bancaires",
+                        "Les frais de tenue de compte"
+                    ],
+                    correctAnswer: "Les intérêts des emprunts",
+                    explanation: "Le compte 661 enregistre les charges d'intérêts liées aux emprunts et dettes financières.",
+                    tip: "L'analyse des charges financières est importante pour évaluer l'endettement."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Une entreprise achète un fonds de commerce. Quel compte utiliser ?",
+                    options: [
+                        "207 - Fonds commercial",
+                        "203 - Frais d'établissement",
+                        "205 - Concessions et droits similaires",
+                        "208 - Autres immobilisations incorporelles"
+                    ],
+                    correctAnswer: "207 - Fonds commercial",
+                    explanation: "Le fonds de commerce est une immobilisation incorporelle comptabilisée au compte 207.",
+                    tip: "L'évaluation du fonds de commerce est complexe et souvent vérifiée en audit."
+                },
+                {
+                    thematic: "Comptabilité",
+                    question: "Qu'est-ce qu'une écriture de contre-passation ?",
+                    options: [
+                        "Une écriture inverse d'une écriture erronée",
+                        "Une écriture de provision",
+                        "Une écriture de régularisation",
+                        "Une écriture de clôture"
+                    ],
+                    correctAnswer: "Une écriture inverse d'une écriture erronée",
+                    explanation: "La contre-passation annule une écriture erronée en passant l'écriture inverse.",
+                    tip: "En audit, les mouvements inhabituels comme les contre-passations doivent être examinés."
+
+                // ============ THÉMATIQUE 2: ÉTATS FINANCIERS (20 questions) ============
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Quelle est la différence fondamentale entre le bilan et le compte de résultat ?",
+                    options: [
+                        "Le bilan est un état de stock à une date donnée, le compte de résultat est un état de flux sur une période",
+                        "Le bilan concerne les liquidités, le compte de résultat les bénéfices",
+                        "Le bilan est obligatoire, le compte de résultat facultatif",
+                        "Il n'y a pas de différence, c'est la même chose"
+                    ],
+                    correctAnswer: "Le bilan est un état de stock à une date donnée, le compte de résultat est un état de flux sur une période",
+                    explanation: "Le bilan photographie le patrimoine à un instant T, le compte de résultat mesure la performance sur une période.",
+                    tip: "Un bon audit financier analyse la cohérence entre bilan et compte de résultat."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que l'EBITDA (Excédent Brut d'Exploitation) ?",
+                    options: [
+                        "Le résultat d'exploitation avant dotations aux amortissements et provisions",
+                        "Le bénéfice net après impôts",
+                        "La marge brute d'autofinancement",
+                        "Le chiffre d'affaires moins les achats"
+                    ],
+                    correctAnswer: "Le résultat d'exploitation avant dotations aux amortissements et provisions",
+                    explanation: "L'EBITDA = Résultat d'exploitation + Dotations aux amortissements et provisions. C'est un indicateur de performance opérationnelle.",
+                    tip: "L'EBITDA est un indicateur clé pour évaluer la performance opérationnelle d'une entreprise."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Dans l'état des flux de trésorerie (IAS 7), les flux sont classés en :",
+                    options: [
+                        "Activités opérationnelles, d'investissement et de financement",
+                        "Activités courantes et exceptionnelles",
+                        "Flux entrants et sortants",
+                        "Flux monétaires et non monétaires"
+                    ],
+                    correctAnswer: "Activités opérationnelles, d'investissement et de financement",
+                    explanation: "La norme IAS 7 impose cette classification pour analyser la génération et l'utilisation des liquidités.",
+                    tip: "L'analyse des flux de trésorerie est essentielle pour évaluer la solvabilité d'une entreprise."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Le fonds de roulement net global (FRNG) est calculé comme :",
+                    options: [
+                        "Ressources stables - Emplois stables",
+                        "Actif circulant - Passif circulant",
+                        "Trésorerie active - Trésorerie passive",
+                        "Capitaux propres - Immobilisations"
+                    ],
+                    correctAnswer: "Ressources stables - Emplois stables",
+                    explanation: "FRNG = Capitaux permanents - Actif immobilisé. Il mesure le financement permanent disponible pour l'exploitation.",
+                    tip: "Le FRNG positif est généralement un signe de bonne santé financière à court terme."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que le besoin en fonds de roulement (BFR) ?",
+                    options: [
+                        "Le besoin de financement lié au cycle d'exploitation",
+                        "Le manque de trésorerie",
+                        "Les emprunts nécessaires",
+                        "Les fonds propres requis"
+                    ],
+                    correctAnswer: "Le besoin de financement lié au cycle d'exploitation",
+                    explanation: "BFR = Stocks + Créances clients - Dettes fournisseurs et sociales. Il mesure le décalage de trésorerie lié à l'exploitation.",
+                    tip: "Un BFR qui augmente peut indiquer des difficultés de recouvrement ou un sur-stockage."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "La trésorerie nette est égale à :",
+                    options: [
+                        "FRNG - BFR",
+                        "BFR - FRNG",
+                        "Actif circulant - Passif circulant",
+                        "Capitaux propres - Dettes"
+                    ],
+                    correctAnswer: "FRNG - BFR",
+                    explanation: "Trésorerie nette = Fonds de roulement net global - Besoin en fonds de roulement. C'est l'équation fondamentale de l'équilibre financier.",
+                    tip: "Cette équation est au cœur de toute analyse financière de court terme."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Quel ratio mesure la capacité d'une entreprise à rembourser ses dettes à court terme ?",
+                    options: [
+                        "Ratio de liquidité générale",
+                        "Ratio d'endettement",
+                        "Ratio de rentabilité",
+                        "Ratio de rotation des stocks"
+                    ],
+                    correctAnswer: "Ratio de liquidité générale",
+                    explanation: "Liquidité générale = Actif circulant / Passif circulant. Un ratio > 1 indique une capacité à couvrir les dettes court terme.",
+                    tip: "Les ratios de liquidité sont particulièrement surveillés par les auditeurs et les banquiers."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Le ratio d'endettement financier se calcule comme :",
+                    options: [
+                        "Dettes financières / Capitaux propres",
+                        "Dettes totales / Actif total",
+                        "Charges financières / CA",
+                        "Emprunts / Trésorerie"
+                    ],
+                    correctAnswer: "Dettes financières / Capitaux propres",
+                    explanation: "Ce ratio mesure le levier financier. Généralement, on considère qu'un ratio > 1 indique un endettement élevé.",
+                    tip: "Un endettement trop élevé peut menacer la pérennité de l'entreprise."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "La capacité d'autofinancement (CAF) représente :",
+                    options: [
+                        "Les ressources internes générées par l'activité",
+                        "La trésorerie disponible",
+                        "Les bénéfices non distribués",
+                        "Les dividendes potentiels"
+                    ],
+                    correctAnswer: "Les ressources internes générées par l'activité",
+                    explanation: "CAF = Résultat net + Dotations aux amortissements et provisions - Reprises sur amortissements et provisions + Valeur nette comptable des éléments d'actif cédés.",
+                    tip: "La CAF est une ressource clé pour financer les investissements et rembourser les dettes."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que le seuil de rentabilité (point mort) ?",
+                    options: [
+                        "Le niveau de chiffre d'affaires à partir duquel l'entreprise commence à faire des bénéfices",
+                        "Le moment où les dettes sont remboursées",
+                        "Le niveau maximal de production",
+                        "Le chiffre d'affaires de l'année précédente"
+                    ],
+                    correctAnswer: "Le niveau de chiffre d'affaires à partir duquel l'entreprise commence à faire des bénéfices",
+                    explanation: "Seuil de rentabilité = Charges fixes / Taux de marge sur coût variable.",
+                    tip: "Connaître le point mort est essentiel pour évaluer le risque d'exploitation."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Dans les états financiers consolidés, qu'est-ce que l'intérêt minoritaire ?",
+                    options: [
+                        "La part des capitaux propres des filiales qui n'appartient pas à la société mère",
+                        "Les dividendes versés aux petites actions",
+                        "Les dettes des filiales",
+                        "Les pertes des filiales"
+                    ],
+                    correctAnswer: "La part des capitaux propres des filiales qui n'appartient pas à la société mère",
+                    explanation: "Les intérêts minoritaires représentent la partie du résultat et des capitaux propres des filiales détenue par des actionnaires extérieurs au groupe.",
+                    tip: "L'audit des états consolidés nécessite de comprendre les méthodes de consolidation."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "La marge commerciale se calcule comme :",
+                    options: [
+                        "Ventes de marchandises - Coût d'achat des marchandises vendues",
+                        "Chiffre d'affaires total - Toutes les charges",
+                        "Ventes - Achats",
+                        "Production vendue - Consommations"
+                    ],
+                    correctAnswer: "Ventes de marchandises - Coût d'achat des marchandises vendues",
+                    explanation: "Marge commerciale = Ventes de marchandises - Coût d'achat des marchandises vendues. Pour les entreprises industrielles, on parle de marge de production.",
+                    tip: "L'analyse des marges permet d'évaluer la performance commerciale."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Le ratio de rotation des stocks se calcule comme :",
+                    options: [
+                        "Coût des marchandises vendues / Stock moyen",
+                        "Chiffre d'affaires / Stock moyen",
+                        "Stock moyen / Ventes journalières",
+                        "Stock final / Stock initial"
+                    ],
+                    correctAnswer: "Coût des marchandises vendues / Stock moyen",
+                    explanation: "Ce ratio mesure combien de fois le stock est renouvelé dans l'année. Plus il est élevé, plus la gestion des stocks est efficace.",
+                    tip: "Une rotation trop faible peut indiquer un sur-stockage ou des stocks obsolètes."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que le délai moyen de règlement clients ?",
+                    options: [
+                        "(Créances clients / Chiffre d'affaires TTC) x 360",
+                        "(Créances clients / Chiffre d'affaires HT) x 360",
+                        "(Dettes fournisseurs / Achats TTC) x 360",
+                        "Crédits clients accordés / 12"
+                    ],
+                    correctAnswer: "(Créances clients / Chiffre d'affaires TTC) x 360",
+                    explanation: "Ce délai mesure le temps moyen que mettent les clients à payer. Un délai allongé peut indiquer des difficultés de recouvrement.",
+                    tip: "En audit, l'analyse du vieillissement des créances est systématique."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "La rentabilité économique (ROCE) mesure :",
+                    options: [
+                        "La performance de l'ensemble des capitaux investis",
+                        "La rentabilité des capitaux propres",
+                        "La marge nette",
+                        "La profitabilité des ventes"
+                    ],
+                    correctAnswer: "La performance de l'ensemble des capitaux investis",
+                    explanation: "ROCE (Return on Capital Employed) = Résultat d'exploitation / Capitaux investis.",
+                    tip: "Le ROCE est particulièrement utile pour comparer des entreprises de différents secteurs."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Dans un tableau de financement, que représente la variation du fonds de roulement net global ?",
+                    options: [
+                        "La capacité de l'entreprise à dégager des ressources stables",
+                        "La variation de trésorerie",
+                        "Le changement de politique de dividende",
+                        "Les nouveaux emprunts"
+                    ],
+                    correctAnswer: "La capacité de l'entreprise à dégager des ressources stables",
+                    explanation: "La variation du FRNG montre comment évolue la capacité de l'entreprise à financer son besoin en fonds de roulement.",
+                    tip: "Le tableau de financement est un outil essentiel pour analyser la politique financière."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que l'effet de levier financier ?",
+                    options: [
+                        "L'impact de l'endettement sur la rentabilité des capitaux propres",
+                        "La capacité à négocier avec les banques",
+                        "L'influence des taux d'intérêt",
+                        "L'effet de la fiscalité sur les résultats"
+                    ],
+                    correctAnswer: "L'impact de l'endettement sur la rentabilité des capitaux propres",
+                    explanation: "L'effet de levier augmente la rentabilité des capitaux propres lorsque le coût de la dette est inférieur à la rentabilité économique.",
+                    tip: "L'effet de levier peut amplifier les gains mais aussi les pertes."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "La valeur ajoutée mesure :",
+                    options: [
+                        "La richesse créée par l'entreprise",
+                        "Le bénéfice réalisé",
+                        "L'augmentation du chiffre d'affaires",
+                        "La différence entre prix de vente et coût de production"
+                    ],
+                    correctAnswer: "La richesse créée par l'entreprise",
+                    explanation: "Valeur ajoutée = Production de l'exercice - Consommations intermédiaires. Elle est répartie entre salariés, État, prêteurs et actionnaires.",
+                    tip: "La valeur ajoutée est un indicateur économique important pour comprendre la contribution de l'entreprise."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Le goodwill (écart d'acquisition) apparaît :",
+                    options: [
+                        "Lors de l'acquisition d'une entreprise à un prix supérieur à la valeur nette comptable de ses actifs",
+                        "Dans le bilan de toutes les entreprises",
+                        "Comme une provision pour perte de valeur",
+                        "Dans le compte de résultat comme charge"
+                    ],
+                    correctAnswer: "Lors de l'acquisition d'une entreprise à un prix supérieur à la valeur nette comptable de ses actifs",
+                    explanation: "Le goodwill représente la valeur des éléments incorporels non individualisés (clientèle, savoir-faire, etc.)",
+                    tip: "Le goodwill doit être testé annuellement pour dépréciation (impairment test selon IAS 36)."
+                },
+                {
+                    thematic: "États Financiers",
+                    question: "Qu'est-ce que le free cash flow (flux de trésorerie disponible) ?",
+                    options: [
+                        "La trésorerie disponible après investissements et avant financement",
+                        "La trésorerie en banque",
+                        "Les bénéfices non distribués",
+                        "La capacité d'emprunt restante"
+                    ],
+                    correctAnswer: "La trésorerie disponible après investissements et avant financement",
+                    explanation: "Free cash flow = Flux de trésorerie opérationnel - Investissements nets. C'est ce qui est disponible pour les actionnaires et les créanciers.",
+                    tip: "Le free cash flow est un indicateur clé pour valoriser une entreprise."
+
+                // ============ THÉMATIQUE 3: AUDIT & CONTRÔLE (20 questions) ============
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Quelle est la différence entre audit interne et audit externe ?",
+                    options: [
+                        "L'audit interne est une mission permanente au sein de l'entreprise, l'audit externe est une mission indépendante",
+                        "L'audit interne est facultatif, l'audit externe obligatoire",
+                        "L'audit interne ne concerne que les grandes entreprises",
+                        "Il n'y a pas de différence"
+                    ],
+                    correctAnswer: "L'audit interne est une mission permanente au sein de l'entreprise, l'audit externe est une mission indépendante",
+                    explanation: "L'audit interne évalue les processus et contrôle interne, l'audit externe certifie les états financiers.",
+                    tip: "Pour devenir auditrice, vous pourrez exercer en interne ou en cabinet d'audit externe."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que le risque inhérent en audit ?",
+                    options: [
+                        "Le risque que les états financiers contiennent des erreurs significatives avant tout contrôle",
+                        "Le risque que l'auditeur ne détecte pas les erreurs",
+                        "Le risque de fraude",
+                        "Le risque lié au contrôle interne"
+                    ],
+                    correctAnswer: "Le risque que les états financiers contiennent des erreurs significatives avant tout contrôle",
+                    explanation: "Le risque inhérent dépend de la nature de l'entreprise, de son secteur et de son environnement.",
+                    tip: "L'évaluation des risques est la première étape de toute mission d'audit."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Quelle norme internationale régit l'audit des états financiers ?",
+                    options: [
+                        "Les International Standards on Auditing (ISA)",
+                        "Les IFRS",
+                        "Le PCG",
+                        "Les normes ISO"
+                    ],
+                    correctAnswer: "Les International Standards on Auditing (ISA)",
+                    explanation: "Les ISA sont les normes internationales d'audit émises par l'IAASB (International Auditing and Assurance Standards Board).",
+                    tip: "Maîtriser les ISA est essentiel pour exercer en cabinet d'audit international."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce qu'un test de conformité en audit ?",
+                    options: [
+                        "Un test pour vérifier si les procédures de contrôle interne sont appliquées",
+                        "Un test pour vérifier la légalité des opérations",
+                        "Un test de la conformité fiscale",
+                        "Un test réglementaire"
+                    ],
+                    correctAnswer: "Un test pour vérifier si les procédures de contrôle interne sont appliquées",
+                    explanation: "Les tests de conformité évaluent l'efficacité du contrôle interne. Si les contrôles sont efficaces, on peut réduire les tests substantifs.",
+                    tip: "L'approche par les risques combine tests de conformité et tests substantifs."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la matérialité (materiality) en audit ?",
+                    options: [
+                        "Le seuil au-delà duquel une erreur influence les décisions des utilisateurs des états financiers",
+                        "La taille de l'entreprise",
+                        "L'importance du chiffre d'affaires",
+                        "La complexité des opérations"
+                    ],
+                    correctAnswer: "Le seuil au-delà duquel une erreur influence les décisions des utilisateurs des états financiers",
+                    explanation: "La matérialité est déterminée au début de la mission et guide l'étendue des travaux d'audit.",
+                    tip: "La détermination de la matérialité est un jugement professionnel clé de l'auditeur."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que le rapport d'audit avec réserve ?",
+                    options: [
+                        "Un rapport qui signale des limitations dans l'étendue de l'audit ou des désaccords avec la direction",
+                        "Un rapport positif sans réserve",
+                        "Un rapport refusé",
+                        "Un rapport intermédiaire"
+                    ],
+                    correctAnswer: "Un rapport qui signale des limitations dans l'étendue de l'audit ou des désaccords avec la direction",
+                    explanation: "Les réserves peuvent porter sur l'étendue (impossibilité d'obtenir des preuves) ou sur des désaccords comptables.",
+                    tip: "Un rapport avec réserve peut avoir des conséquences importantes pour l'entreprise (banques, investisseurs)."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la lettre de mission en audit ?",
+                    options: [
+                        "Le contrat qui définit les responsabilités respectives de l'auditeur et de l'entreprise",
+                        "La lettre de démission de l'ancien auditeur",
+                        "La lettre recommandant des améliorations",
+                        "La confirmation de la mission par l'autorité de supervision"
+                    ],
+                    correctAnswer: "Le contrat qui définit les responsabilités respectives de l'auditeur et de l'entreprise",
+                    explanation: "La lettre de mission précise l'étendue des travaux, les responsabilités de la direction et les honoraires.",
+                    tip: "Une lettre de mission bien rédigée est une protection juridique pour l'auditeur."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que le testing d'audit ?",
+                    options: [
+                        "L'examen d'un échantillon de transactions pour en tirer des conclusions sur l'ensemble",
+                        "Le test des logiciels comptables",
+                        "L'évaluation des compétences du personnel comptable",
+                        "La vérification de la signature des chèques"
+                    ],
+                    correctAnswer: "L'examen d'un échantillon de transactions pour en tirer des conclusions sur l'ensemble",
+                    explanation: "Le testing peut être statistique ou non statistique, mais doit toujours être représentatif.",
+                    tip: "La sélection d'échantillons appropriés est une compétence clé en audit."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la lettre de représentation de la direction ?",
+                    options: [
+                        "Un document signé par la direction attestant de la complétude et de l'exactitude des informations fournies",
+                        "La lettre de motivation du directeur financier",
+                        "La représentation légale de l'entreprise",
+                        "Le procès-verbal de l'assemblée générale"
+                    ],
+                    correctAnswer: "Un document signé par la direction attestant de la complétude et de l'exactitude des informations fournies",
+                    explanation: "Cette lettre est une preuve d'audit importante, mais ne remplace pas les autres procédures d'audit.",
+                    tip: "La lettre de représentation est généralement signée à la fin de la mission."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Quelle est la première phase d'une mission d'audit ?",
+                    options: [
+                        "L'acceptation de la mission et la planification",
+                        "Les tests de détails",
+                        "La délivrance du rapport",
+                        "La revue analytique"
+                    ],
+                    correctAnswer: "L'acceptation de la mission et la planification",
+                    explanation: "La planification inclut la compréhension de l'entreprise, l'évaluation des risques et la détermination de la stratégie d'audit.",
+                    tip: "Une bonne planification est essentielle pour l'efficacité et l'efficience de l'audit."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que le contrôle interne ?",
+                    options: [
+                        "L'ensemble des procédures mises en place pour assurer la fiabilité de l'information financière",
+                        "La vérification par le directeur financier",
+                        "L'audit interne",
+                        "La supervision par le commissaire aux comptes"
+                    ],
+                    correctAnswer: "L'ensemble des procédures mises en place pour assurer la fiabilité de l'information financière",
+                    explanation: "Le contrôle interne comprend 5 composantes : environnement de contrôle, évaluation des risques, activités de contrôle, information et communication, activités de surveillance.",
+                    tip: "Un bon contrôle interne réduit le risque d'erreurs et de fraudes."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la séparation des fonctions (segregation of duties) ?",
+                    options: [
+                        "Le principe selon lequel les tâches d'autorisation, d'exécution, d'enregistrement et de conservation doivent être séparées",
+                        "La division du travail entre services",
+                        "La spécialisation des employés",
+                        "La répartition géographique des activités"
+                    ],
+                    correctAnswer: "Le principe selon lequel les tâches d'autorisation, d'exécution, d'enregistrement et de conservation doivent être séparées",
+                    explanation: "Cette séparation réduit les risques d'erreurs et de fraudes en empêchant qu'une seule personne contrôle un processus complet.",
+                    tip: "Dans les petites entreprises, la séparation des fonctions est souvent limitée - cela augmente le risque d'audit."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce qu'un test substantif ?",
+                    options: [
+                        "Un test pour détecter les erreurs significatives dans les soldes des comptes",
+                        "Un test de conformité aux procédures",
+                        "Un test de la substance économique des opérations",
+                        "Un test approfondi de tous les comptes"
+                    ],
+                    correctAnswer: "Un test pour détecter les erreurs significatives dans les soldes des comptes",
+                    explanation: "Les tests substantifs comprennent les tests de détails et les procédures analytiques.",
+                    tip: "L'étendue des tests substantifs dépend de l'évaluation du contrôle interne."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la lettre de la direction (management letter) ?",
+                    options: [
+                        "La lettre adressée par l'auditeur à la direction pour signaler les faiblesses du contrôle interne",
+                        "La lettre de mission",
+                        "La lettre de représentation",
+                        "La lettre de démission"
+                    ],
+                    correctAnswer: "La lettre adressée par l'auditeur à la direction pour signaler les faiblesses du contrôle interne",
+                    explanation: "Cette lettre propose des recommandations d'amélioration mais ne fait pas partie du rapport d'audit officiel.",
+                    tip: "Une bonne lettre de la direction ajoute de la valeur à la mission d'audit."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que l'audit continu (continuous auditing) ?",
+                    options: [
+                        "Une approche où les procédures d'audit sont effectuées tout au long de l'exercice",
+                        "Un audit qui ne s'arrête jamais",
+                        "La surveillance permanente par l'audit interne",
+                        "L'audit en temps réel"
+                    ],
+                    correctAnswer: "Une approche où les procédures d'audit sont effectuées tout au long de l'exercice",
+                    explanation: "L'audit continu permet une détection plus rapide des problèmes et réduit les travaux de fin d'année.",
+                    tip: "Les technologies d'analyse de données facilitent de plus en plus l'audit continu."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que l'indépendance de l'auditeur ?",
+                    options: [
+                        "L'obligation pour l'auditeur d'être libre de toute influence qui pourrait compromettre son jugement professionnel",
+                        "Le fait de travailler seul",
+                        "L'autonomie dans l'organisation du travail",
+                        "La liberté de choisir ses missions"
+                    ],
+                    correctAnswer: "L'obligation pour l'auditeur d'être libre de toute influence qui pourrait compromettre son jugement professionnel",
+                    explanation: "L'indépendance comprend l'indépendance d'esprit (état d'esprit) et l'indépendance en apparence (perception par les tiers).",
+                    tip: "L'indépendance est la pierre angulaire de la profession d'auditeur."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la documentation d'audit (working papers) ?",
+                    options: [
+                        "L'ensemble des documents qui justifient les conclusions de l'auditeur",
+                        "Le rapport d'audit uniquement",
+                        "Les pièces comptables de l'entreprise",
+                        "La correspondance avec la direction"
+                    ],
+                    correctAnswer: "L'ensemble des documents qui justifient les conclusions de l'auditeur",
+                    explanation: "Les working papers doivent être suffisamment détaillés pour permettre à un autre auditeur expérimenté de comprendre le travail effectué.",
+                    tip: "Une bonne documentation est une protection juridique et permet la revue de la qualité."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Quelle est la différence entre erreur et fraude en audit ?",
+                    options: [
+                        "L'erreur est non intentionnelle, la fraude est intentionnelle",
+                        "L'erreur est significative, la fraude ne l'est pas",
+                        "L'erreur concerne les chiffres, la fraude les documents",
+                        "Il n'y a pas de différence"
+                    ],
+                    correctAnswer: "L'erreur est non intentionnelle, la fraude est intentionnelle",
+                    explanation: "La fraude peut être la falsification des états financiers ou la détournement d'actifs.",
+                    tip: "L'auditeur a la responsabilité de planifier l'audit pour détecter les erreurs significatives et les fraudes."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que la procédure d'audit de circularisation ?",
+                    options: [
+                        "La confirmation directe auprès des tiers (clients, fournisseurs, banques) des soldes des comptes",
+                        "La vérification circulaire des documents",
+                        "L'envoi de questionnaires en boucle",
+                        "La revue circulaire des états financiers"
+                    ],
+                    correctAnswer: "La confirmation directe auprès des tiers (clients, fournisseurs, banques) des soldes des comptes",
+                    explanation: "La circularisation est une procédure de confirmation externe qui fournit des preuves d'audit fiables.",
+                    tip: "Les confirmations de banque sont particulièrement importantes pour vérifier la trésorerie."
+                },
+                {
+                    thematic: "Audit & Contrôle",
+                    question: "Qu'est-ce que le risque de non-détection en audit ?",
+                    options: [
+                        "Le risque que l'auditeur ne détecte pas une erreur significative",
+                        "Le risque que l'entreprise fasse faillite",
+                        "Le risque de fraude non détectée",
+                        "Le risque lié au contrôle interne inefficace"
+                    ],
+                    correctAnswer: "Le risque que l'auditeur ne détecte pas une erreur significative",
+                    explanation: "Le risque de non-détection dépend de l'efficacité des procédures d'audit et de leur application.",
+                    tip: "Pour réduire le risque de non-détection, l'auditeur augmente l'étendue des tests."
+
+                // ============ THÉMATIQUE 4: FISCALITÉ & IMPÔTS (20 questions) ============
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quel est le taux normal de TVA en France en 2024 ?",
+                    options: [
+                        "20%",
+                        "19,6%",
+                        "21%",
+                        "10%"
+                    ],
+                    correctAnswer: "20%",
+                    explanation: "Le taux normal de TVA en France est de 20% depuis le 1er janvier 2014.",
+                    tip: "La TVA représente souvent le premier poste de flux de trésorerie sortant - une bonne gestion est essentielle."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quelle est la base de calcul de l'impôt sur les sociétés (IS) ?",
+                    options: [
+                        "Le résultat fiscal de l'exercice",
+                        "Le chiffre d'affaires",
+                        "La valeur ajoutée",
+                        "Les capitaux propres"
+                    ],
+                    correctAnswer: "Le résultat fiscal de l'exercice",
+                    explanation: "L'IS est calculé sur le résultat fiscal, après réintégrations et déductions extra-comptables.",
+                    tip: "Les différences entre résultat comptable et résultat fiscal génèrent des impôts différés."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la CVAE (Cotisation sur la Valeur Ajoutée des Entreprises) ?",
+                    options: [
+                        "Un impôt local basé sur la valeur ajoutée",
+                        "Une taxe sur le chiffre d'affaires",
+                        "Une contribution sociale",
+                        "Un impôt sur les bénéfices"
+                    ],
+                    correctAnswer: "Un impôt local basé sur la valeur ajoutée",
+                    explanation: "La CVAE a remplacé la taxe professionnelle pour la part valeur ajoutée. Elle est due par les entreprises réalisant plus de 500 000€ de CA.",
+                    tip: "La CVAE est un impôt complexe avec des déclarations spécifiques."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le crédit d'impôt recherche (CIR) ?",
+                    options: [
+                        "Un dispositif fiscal encourageant la R&D des entreprises",
+                        "Un crédit pour les chercheurs",
+                        "Une déduction pour investissement",
+                        "Un crédit pour création d'entreprise"
+                    ],
+                    correctAnswer: "Un dispositif fiscal encourageant la R&D des entreprises",
+                    explanation: "Le CIR permet de récupérer 30% des dépenses de R&D jusqu'à 100M€, et 5% au-delà.",
+                    tip: "Le CIR est très contrôlé par l'administration fiscale - une documentation rigoureuse est nécessaire."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quelle est la durée de conservation obligatoire des documents fiscaux ?",
+                    options: [
+                        "6 ans",
+                        "3 ans",
+                        "10 ans",
+                        "1 an"
+                    ],
+                    correctAnswer: "6 ans",
+                    explanation: "Les documents fiscaux doivent être conservés 6 ans (article L102 B du Livre des Procédures Fiscales).",
+                    tip: "En audit, vérifier la conservation des documents est essentiel."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la liasse fiscale ?",
+                    options: [
+                        "L'ensemble des déclarations fiscales déposées par une entreprise",
+                        "Le dossier de contrôle fiscal",
+                        "Les bulletins de salaire",
+                        "Les factures d'un exercice"
+                    ],
+                    correctAnswer: "L'ensemble des déclarations fiscales déposées par une entreprise",
+                    explanation: "La liasse comprend notamment la déclaration de résultat, les tableaux annexes, et les déclarations de TVA.",
+                    tip: "La préparation de la liasse fiscale est souvent confiée à l'expert-comptable ou au service fiscal."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quel est le taux réduit de TVA pour la restauration ?",
+                    options: [
+                        "10%",
+                        "5,5%",
+                        "2,1%",
+                        "20%"
+                    ],
+                    correctAnswer: "10%",
+                    explanation: "Depuis le 1er janvier 2024, la restauration sur place est au taux réduit de 10% (hors boissons alcoolisées).",
+                    tip: "Les taux de TVA réduits sont nombreux et sectoriels - une erreur de taux peut être coûteuse."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que l'impôt différé ?",
+                    options: [
+                        "Un impôt calculé sur les différences temporaires entre résultat comptable et fiscal",
+                        "Un impôt payable plus tard",
+                        "Un impôt reporté d'un exercice à l'autre",
+                        "Un crédit d'impôt"
+                    ],
+                    correctAnswer: "Un impôt calculé sur les différences temporaires entre résultat comptable et fiscal",
+                    explanation: "L'impôt différé actif ou passif répond au principe comptable d'indépendance des exercices.",
+                    tip: "Les impôts différés sont complexes mais essentiels pour une image fidèle de la situation fiscale."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quelle déclaration pour la TVA lorsque le CA dépasse 36 000€ ?",
+                    options: [
+                        "Déclaration mensuelle ou trimestrielle",
+                        "Déclaration annuelle uniquement",
+                        "Pas de déclaration spécifique",
+                        "Déclaration hebdomadaire"
+                    ],
+                    correctAnswer: "Déclaration mensuelle ou trimestrielle",
+                    explanation: "Le régime réel normal impose des déclarations périodiques de TVA (CA12 pour les déclarations mensuelles).",
+                    tip: "Les délais de déclaration et de paiement de la TVA sont stricts, avec des pénalités en cas de retard."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le prélèvement à la source (PAS) ?",
+                    options: [
+                        "Le système de collecte de l'impôt sur le revenu directement par l'employeur",
+                        "La retenue à la source sur les dividendes",
+                        "Le prélèvement automatique des impôts",
+                        "La collecte de la TVA"
+                    ],
+                    correctAnswer: "Le système de collecte de l'impôt sur le revenu directement par l'employeur",
+                    explanation: "Depuis 2019, l'impôt sur le revenu est prélevé directement sur les salaires et pensions.",
+                    tip: "Le PAS a simplifié le recouvrement mais complexifié la paie pour les entreprises."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la taxe sur les salaires ?",
+                    options: [
+                        "Une taxe due par les employeurs non assujettis à la TVA ou partiellement assujettis",
+                        "Un impôt sur les employés",
+                        "Une contribution sociale",
+                        "La CSG des salariés"
+                    ],
+                    correctAnswer: "Une taxe due par les employeurs non assujettis à la TVA ou partiellement assujettis",
+                    explanation: "La taxe sur les salaires compense le fait que ces employeurs ne collectent pas ou peu de TVA.",
+                    tip: "Cette taxe est souvent oubliée mais peut être significative pour certaines entreprises."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le régime des sociétés mères et filiales ?",
+                    options: [
+                        "Un régime permettant l'exonération des dividendes entre sociétés françaises",
+                        "Une simplification de gestion de groupe",
+                        "Une fusion fiscale",
+                        "Un régime d'intégration fiscale"
+                    ],
+                    correctAnswer: "Un régime permettant l'exonération des dividendes entre sociétés françaises",
+                    explanation: "Sous conditions, les dividendes versés par une filiale à sa société mère sont exonérés à 95%.",
+                    tip: "Ce régime est essentiel pour l'optimisation fiscale des groupes."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la déclaration contrôlée ?",
+                    options: [
+                        "Un régime fiscal pour certaines professions libérales",
+                        "Une déclaration particulièrement vérifiée",
+                        "Le régime normal des entreprises",
+                        "Une déclaration avec comptabilité supervisée"
+                    ],
+                    correctAnswer: "Un régime fiscal pour certaines professions libérales",
+                    explanation: "Dans ce régime, le résultat fiscal est égal au résultat comptable, sous réserve de quelques réintégrations.",
+                    tip: "Ce régime concerne notamment les experts-comptables, avocats, médecins, etc."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le CFE (Cotisation Foncière des Entreprises) ?",
+                    options: [
+                        "Un impôt local basé sur la valeur locative des biens immobiliers",
+                        "Une taxe sur le chiffre d'affaires",
+                        "Une contribution pour l'environnement",
+                        "Un impôt sur les salaires"
+                    ],
+                    correctAnswer: "Un impôt local basé sur la valeur locative des biens immobiliers",
+                    explanation: "La CFE est due par toutes les entreprises exerçant une activité en France, sauf exonérations.",
+                    tip: "La CFE est déclarée via la déclaration 1447-C."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Quelle est la période de prescription en matière fiscale ?",
+                    options: [
+                        "3 ans à compter de l'année suivant celle de l'imposition",
+                        "5 ans",
+                        "10 ans",
+                        "1 an"
+                    ],
+                    correctAnswer: "3 ans à compter de l'année suivant celle de l'imposition",
+                    explanation: "Sauf cas de fraude fiscale (10 ans), l'administration dispose de 3 ans pour contrôler et redresser.",
+                    tip: "Cette prescription est importante pour clôturer définitivement les dossiers fiscaux."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le régime micro-fiscal ?",
+                    options: [
+                        "Un régime simplifié pour les petites entreprises",
+                        "Un régime pour les micro-entreprises",
+                        "Un régime d'imposition forfaitaire",
+                        "Un régime sans comptabilité"
+                    ],
+                    correctAnswer: "Un régime simplifié pour les petites entreprises",
+                    explanation: "Le régime micro s'applique sous certains seuils de CA et permet une détermination forfaitaire du bénéfice.",
+                    tip: "Ce régime limite les charges déductibles - il peut être intéressant ou non selon l'activité."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la déclaration de résultat 2031 ?",
+                    options: [
+                        "La déclaration de l'impôt sur les sociétés",
+                        "La déclaration de TVA",
+                        "La déclaration des salaires",
+                        "La déclaration des investissements"
+                    ],
+                    correctAnswer: "La déclaration de l'impôt sur les sociétés",
+                    explanation: "Le formulaire 2031 est utilisé pour déclarer le résultat fiscal et calculer l'IS.",
+                    tip: "Cette déclaration est accompagnée de nombreux annexes selon la complexité de l'entreprise."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que le régime de l'intégration fiscale ?",
+                    options: [
+                        "Un régime permettant à un groupe de consolider ses résultats pour l'IS",
+                        "La fusion de plusieurs entreprises",
+                        "L'intégration des filiales étrangères",
+                        "Un régime pour les PME"
+                    ],
+                    correctAnswer: "Un régime permettant à un groupe de consolider ses résultats pour l'IS",
+                    explanation: "L'intégration fiscale permet d'imputer les déficits d'une société du groupe sur les bénéfices d'une autre.",
+                    tip: "Ce régime est très avantageux fiscalement mais soumis à conditions strictes."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la retenue à la source sur les dividendes ?",
+                    options: [
+                        "Un prélèvement de 12,8% sur les dividendes versés aux actionnaires personnes physiques",
+                        "L'impôt sur les sociétés",
+                        "La CSG sur les dividendes",
+                        "Un acompte d'impôt"
+                    ],
+                    correctAnswer: "Un prélèvement de 12,8% sur les dividendes versés aux actionnaires personnes physiques",
+                    explanation: "Ce prélèvement est libératoire de l'impôt sur le revenu, sauf option pour le barème progressif.",
+                    tip: "La fiscalité des dividendes est complexe avec plusieurs régimes possibles."
+                },
+                {
+                    thematic: "Fiscalité & Impôts",
+                    question: "Qu'est-ce que la déclaration 2058 ?",
+                    options: [
+                        "La déclaration des immobilisations et des amortissements",
+                        "La déclaration de TVA",
+                        "La déclaration des salaires",
+                        "La déclaration des résultats"
+                    ],
+                    correctAnswer: "La déclaration des immobilisations et des amortissements",
+                    explanation: "La 2058 détaille les immobilisations, leurs amortissements et leurs cessions.",
+                    tip: "Cette déclaration est essentielle pour le suivi du patrimoine immobilisé et le calcul des plus-values."
+
+                // ============ THÉMATIQUE 5: GESTION D'ENTREPRISE (20 questions) ============
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce qu'un business plan ?",
+                    options: [
+                        "Un document présentant la stratégie, les objectifs et les prévisions financières d'une entreprise",
+                        "Le plan comptable de l'entreprise",
+                        "Le plan de financement initial",
+                        "Le plan marketing uniquement"
+                    ],
+                    correctAnswer: "Un document présentant la stratégie, les objectifs et les prévisions financières d'une entreprise",
+                    explanation: "Le business plan sert à convaincre les investisseurs et à guider la direction.",
+                    tip: "Un DAF doit savoir élaborer et analyser des business plans."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le cash burn rate ?",
+                    options: [
+                        "Le taux de consommation de trésorerie d'une entreprise",
+                        "Le taux d'intérêt des emprunts",
+                        "Le taux de rotation des stocks",
+                        "Le taux de marge"
+                    ],
+                    correctAnswer: "Le taux de consommation de trésorerie d'une entreprise",
+                    explanation: "Il mesure combien de temps l'entreprise peut survivre avec sa trésorerie actuelle sans nouveaux financements.",
+                    tip: "Pour les startups, le cash burn rate est un indicateur de survie essentiel."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la méthode ABC (Activity Based Costing) ?",
+                    options: [
+                        "Une méthode de calcul des coûts basée sur les activités",
+                        "Une méthode alphabétique de classement",
+                        "Une méthode de contrôle budgétaire",
+                        "Une méthode d'analyse des stocks"
+                    ],
+                    correctAnswer: "Une méthode de calcul des coûts basée sur les activités",
+                    explanation: "La méthode ABC attribue les coûts indirects aux produits/services en fonction des activités nécessaires à leur production.",
+                    tip: "L'ABC permet une meilleure connaissance des coûts et de la rentabilité par produit."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le tableau de bord prospectif (balanced scorecard) ?",
+                    options: [
+                        "Un outil de pilotage stratégique qui combine indicateurs financiers et non financiers",
+                        "Un tableau Excel de suivi budgétaire",
+                        "Un bilan prévisionnel",
+                        "Un tableau de flux de trésorerie"
+                    ],
+                    correctAnswer: "Un outil de pilotage stratégique qui combine indicateurs financiers et non financiers",
+                    explanation: "Il articule 4 perspectives : financière, clients, processus internes, apprentissage et croissance.",
+                    tip: "Un bon tableau de bord aide le DAF à piloter la performance globale."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la gestion prévisionnelle des emplois et compétences (GPEC) ?",
+                    options: [
+                        "Une démarche pour anticiper les besoins en personnel et compétences",
+                        "La gestion des paies",
+                        "Le recrutement des cadres",
+                        "La formation obligatoire"
+                    ],
+                    correctAnswer: "Une démarche pour anticiper les besoins en personnel et compétences",
+                    explanation: "La GPEC est obligatoire dans les entreprises de plus de 300 salariés.",
+                    tip: "La masse salariale étant souvent le premier poste de charges, sa maîtrise est cruciale."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le coût du capital (WACC) ?",
+                    options: [
+                        "Le coût moyen pondéré des sources de financement (capitaux propres et dette)",
+                        "Le coût des emprunts",
+                        "Le coût des investissements",
+                        "Le coût des capitaux propres"
+                    ],
+                    correctAnswer: "Le coût moyen pondéré des sources de financement (capitaux propres et dette)",
+                    explanation: "WACC = (Coût des capitaux propres × % capitaux propres) + (Coût de la dette après impôt × % dette).",
+                    tip: "Le WACC est utilisé comme taux d'actualisation pour évaluer les investissements."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la méthode des scénarios en gestion ?",
+                    options: [
+                        "Une technique pour anticiper différents futurs possibles et préparer des réponses",
+                        "La création de fictions sur l'entreprise",
+                        "L'analyse du pire cas uniquement",
+                        "La prévision basée sur le passé"
+                    ],
+                    correctAnswer: "Une technique pour anticiper différents futurs possibles et préparer des réponses",
+                    explanation: "On développe généralement 3 scénarios : optimiste, pessimiste et réaliste.",
+                    tip: "La planification par scénarios est essentielle en période d'incertitude."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la valeur économique ajoutée (EVA) ?",
+                    options: [
+                        "Un indicateur mesurant la richesse créée au-delà du coût du capital",
+                        "La valeur ajoutée comptable",
+                        "Le bénéfice net",
+                        "La marge opérationnelle"
+                    ],
+                    correctAnswer: "Un indicateur mesurant la richesse créée au-delà du coût du capital",
+                    explanation: "EVA = NOPAT (résultat d'exploitation après impôt) - (Capital investi × WACC).",
+                    tip: "L'EVA aligne les intérêts des managers et des actionnaires."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le risque de change ?",
+                    options: [
+                        "Le risque lié aux fluctuations des taux de change",
+                        "Le risque de non-paiement par les clients étrangers",
+                        "Le risque politique à l'étranger",
+                        "Le risque de variation des prix à l'export"
+                    ],
+                    correctAnswer: "Le risque lié aux fluctuations des taux de change",
+                    explanation: "Ce risque concerne les entreprises qui importent, exportent, ou ont des filiales à l'étranger.",
+                    tip: "La couverture du risque de change fait partie de la gestion financière internationale."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce qu'un ESG (Environmental, Social, Governance) ?",
+                    options: [
+                        "Les critères environnementaux, sociaux et de gouvernance pour évaluer la responsabilité d'une entreprise",
+                        "Une norme comptable",
+                        "Un système de gestion environnementale",
+                        "Un indicateur de productivité"
+                    ],
+                    correctAnswer: "Les critères environnementaux, sociaux et de gouvernance pour évaluer la responsabilité d'une entreprise",
+                    explanation: "Les critères ESG sont de plus en plus importants pour les investisseurs et la réputation des entreprises.",
+                    tip: "Le reporting ESG devient obligatoire pour les grandes entreprises (CSRD)."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la gestion de la trésorerie (cash management) ?",
+                    options: [
+                        "L'optimisation des flux de trésorerie pour maximiser la liquidité et minimiser le coût",
+                        "La simple surveillance du solde bancaire",
+                        "La gestion des paiements fournisseurs",
+                        "L'encaissement des clients"
+                    ],
+                    correctAnswer: "L'optimisation des flux de trésorerie pour maximiser la liquidité et minimiser le coût",
+                    explanation: "Le cash management inclut la prévision des flux, l'optimisation des délais, la gestion des excédents et des déficits.",
+                    tip: "Une bonne gestion de trésorerie peut générer des gains significatifs pour l'entreprise."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le délai de crédit inter-entreprises (DCIE) ?",
+                    options: [
+                        "Le délai moyen entre la livraison et le paiement entre entreprises",
+                        "Le crédit bancaire accordé aux entreprises",
+                        "Le délai de traitement des factures",
+                        "Le crédit d'impôt"
+                    ],
+                    correctAnswer: "Le délai moyen entre la livraison et le paiement entre entreprises",
+                    explanation: "En France, le DCIE est encadré par la loi (45 jours fin de mois ou 60 jours calendaires).",
+                    tip: "Le non-respect des délais légaux de paiement peut entraîner des pénalités."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le modèle économique (business model) ?",
+                    options: [
+                        "La manière dont l'entreprise crée, délivre et capture de la valeur",
+                        "Le plan comptable",
+                        "L'organigramme",
+                        "Le statut juridique"
+                    ],
+                    correctAnswer: "La manière dont l'entreprise crée, délivre et capture de la valeur",
+                    explanation: "Le business model décrit les ressources clés, les activités, les partenaires, les segments clients, etc.",
+                    tip: "Comprendre le business model est essentiel pour analyser la viabilité d'une entreprise."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la due diligence financière ?",
+                    options: [
+                        "L'examen approfondi des aspects financiers avant une acquisition",
+                        "La diligence des comptables",
+                        "Le contrôle interne obligatoire",
+                        "L'audit légal"
+                    ],
+                    correctAnswer: "L'examen approfondi des aspects financiers avant une acquisition",
+                    explanation: "La due diligence identifie les risques, vérifie les états financiers et évalue la valorisation.",
+                    tip: "La due diligence est une compétence clé pour un DAF impliqué dans des opérations de croissance externe."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le cycle d'exploitation ?",
+                    options: [
+                        "La période entre l'achat des matières premières et l'encaissement des ventes",
+                        "L'année comptable",
+                        "Le cycle de production",
+                        "La saison commerciale"
+                    ],
+                    correctAnswer: "La période entre l'achat des matières premières et l'encaissement des ventes",
+                    explanation: "Cycle d'exploitation = Délai de rotation des stocks + Délai de règlement clients - Délai de paiement fournisseurs.",
+                    tip: "Réduire le cycle d'exploitation améliore le besoin en fonds de roulement."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le pilotage par les coûts ?",
+                    options: [
+                        "Une approche de gestion focalisée sur la maîtrise et l'optimisation des coûts",
+                        "La simple réduction des dépenses",
+                        "La comptabilité analytique",
+                        "Le contrôle budgétaire"
+                    ],
+                    correctAnswer: "Une approche de gestion focalisée sur la maîtrise et l'optimisation des coûts",
+                    explanation: "Il ne s'agit pas seulement de réduire les coûts, mais d'optimiser le rapport coût/valeur.",
+                    tip: "Un DAF doit savoir distinguer les coûts qui créent de la valeur de ceux qui n'en créent pas."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que le private equity ?",
+                    options: [
+                        "Le capital-investissement dans des entreprises non cotées",
+                        "Les actions cotées en bourse",
+                        "Les obligations d'entreprise",
+                        "Le financement bancaire"
+                    ],
+                    correctAnswer: "Le capital-investissement dans des entreprises non cotées",
+                    explanation: "Le private equity finance la croissance, les transmissions ou les restructurations d'entreprises.",
+                    tip: "Comprendre le private equity est utile pour le financement et la cession d'entreprises."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la gestion des risques (risk management) ?",
+                    options: [
+                        "Le processus d'identification, d'évaluation et de traitement des risques",
+                        "L'assurance de l'entreprise",
+                        "La prévention des accidents",
+                        "Le contrôle interne"
+                    ],
+                    correctAnswer: "Le processus d'identification, d'évaluation et de traitement des risques",
+                    explanation: "Une bonne gestion des risques protège l'entreprise et crée de la valeur.",
+                    tip: "Le risk management est une fonction stratégique de plus en plus importante."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la valeur terminale dans une évaluation ?",
+                    options: [
+                        "La valeur de l'entreprise au-delà de la période de prévision détaillée",
+                        "La valeur de liquidation",
+                        "La valeur des actifs corporels",
+                        "La valeur des brevets"
+                    ],
+                    correctAnswer: "La valeur de l'entreprise au-delà de la période de prévision détaillée",
+                    explanation: "La valeur terminale représente souvent plus de 50% de la valorisation totale.",
+                    tip: "L'hypothèse de croissance à perpetuité dans le calcul de la valeur terminale est critique."
+                },
+                {
+                    thematic: "Gestion d'Entreprise",
+                    question: "Qu'est-ce que la gouvernance d'entreprise (corporate governance) ?",
+                    options: [
+                        "L'ensemble des règles qui régissent le fonctionnement et le contrôle d'une entreprise",
+                        "La direction générale",
+                        "Le conseil d'administration uniquement",
+                        "La réglementation boursière"
+                    ],
+                    correctAnswer: "L'ensemble des règles qui régissent le fonctionnement et le contrôle d'une entreprise",
+                    explanation: "La gouvernance inclut les relations entre actionnaires, conseil d'administration, direction et autres parties prenantes.",
+                    tip: "Une bonne gouvernance réduit les risques et améliore la performance à long terme."
+
+                // ============ THÉMATIQUE 6: DÉCLARATIONS OBLIGATOIRES (20 questions) ============
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la DSN (Déclaration Sociale Nominative) ?",
+                    options: [
+                        "La déclaration unique remplaçant la plupart des déclarations sociales",
+                        "La déclaration des salaires",
+                        "La déclaration à l'Urssaf",
+                        "La déclaration de TVA"
+                    ],
+                    correctAnswer: "La déclaration unique remplaçant la plupart des déclarations sociales",
+                    explanation: "La DSN est transmise mensuellement et contient toutes les informations sociales des employés.",
+                    tip: "La DSN a simplifié mais aussi complexifié les déclarations sociales avec des délais stricts."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les bénéficiaires effectifs (registre UBO) ?",
+                    options: [
+                        "La déclaration au registre des bénéficiaires effectifs",
+                        "La déclaration fiscale",
+                        "La déclaration au registre du commerce",
+                        "La déclaration à la Banque de France"
+                    ],
+                    correctAnswer: "La déclaration au registre des bénéficiaires effectifs",
+                    explanation: "Cette déclaration identifie les personnes physiques qui contrôlent une société (plus de 25% des droits de vote ou du capital).",
+                    tip: "Cette déclaration est obligatoire dans le cadre de la lutte contre le blanchiment."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration de transparence fiscale (formulaire 2257-SD) ?",
+                    options: [
+                        "La déclaration des montants versés à des non-résidents",
+                        "La déclaration des salaires des expatriés",
+                        "La déclaration des transactions internationales",
+                        "La déclaration des avoirs à l'étranger"
+                    ],
+                    correctAnswer: "La déclaration des montants versés à des non-résidents",
+                    explanation: "Cette déclaration recense les rémunérations, commissions, etc. versées à des personnes ou entreprises non résidentes.",
+                    tip: "Cette déclaration permet à l'administration fiscale de vérifier la bonne imposition à l'étranger."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que le formulaire 2069 pour l'impôt sur les sociétés ?",
+                    options: [
+                        "L'annexe des amortissements",
+                        "La déclaration des plus-values",
+                        "Le tableau des investissements",
+                        "L'état des provisions"
+                    ],
+                    correctAnswer: "L'annexe des amortissements",
+                    explanation: "Le 2069 détaille les immobilisations, leurs amortissements et leurs cessions pour l'IS.",
+                    tip: "Cette annexe est essentielle pour le calcul correct de l'IS."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les cotisations de sécurité sociale des travailleurs indépendants ?",
+                    options: [
+                        "La déclaration sociale des indépendants (DSI)",
+                        "La DSN",
+                        "La déclaration Urssaf",
+                        "La déclaration à la CIPAV"
+                    ],
+                    correctAnswer: "La déclaration sociale des indépendants (DSI)",
+                    explanation: "Les travailleurs indépendants déclarent leurs revenus via la DSI pour calculer leurs cotisations.",
+                    tip: "Le régime des indépendants a ses spécificités déclaratives et sociales."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2059 A pour les sociétés ?",
+                    options: [
+                        "L'annexe sur les stocks et en-cours",
+                        "La déclaration des salaires",
+                        "L'état des créances et dettes",
+                        "Le tableau des capitaux propres"
+                    ],
+                    correctAnswer: "L'annexe sur les stocks et en-cours",
+                    explanation: "Cette annexe détaille la composition et la valorisation des stocks.",
+                    tip: "La valorisation des stocks est un point sensible en audit et en contrôle fiscal."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les opérations intracommunautaires ?",
+                    options: [
+                        "La déclaration DEB (Déclaration d'Échanges de Biens)",
+                        "La déclaration de TVA européenne",
+                        "Le formulaire 3310",
+                        "La déclaration douanière"
+                    ],
+                    correctAnswer: "La déclaration DEB (Déclaration d'Échanges de Biens)",
+                    explanation: "La DEB recense les échanges de biens avec les autres pays de l'UE.",
+                    tip: "La DEB est mensuelle ou trimestrielle selon le volume d'opérations."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que le registre des mouvements de titres ?",
+                    options: [
+                        "Le registre qui suit les entrées et sorties de titres (actions, obligations)",
+                        "Le registre des actionnaires",
+                        "Le journal des opérations sur titres",
+                        "Le registre des assemblées"
+                    ],
+                    correctAnswer: "Le registre qui suit les entrées et sorties de titres (actions, obligations)",
+                    explanation: "Ce registre est obligatoire pour suivre les mouvements de titres au porteur.",
+                    tip: "Ce registre est important pour la traçabilité des titres et la lutte contre le blanchiment."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les conventions réglementées ?",
+                    options: [
+                        "La déclaration au commissaire aux comptes des conventions entre la société et ses dirigeants",
+                        "La déclaration fiscale des avantages en nature",
+                        "La déclaration des rémunérations des dirigeants",
+                        "La déclaration des prêts aux dirigeants"
+                    ],
+                    correctAnswer: "La déclaration au commissaire aux comptes des conventions entre la société et ses dirigeants",
+                    explanation: "Ces conventions doivent être autorisées par le conseil d'administration et contrôlées par le commissaire aux comptes.",
+                    tip: "Ces déclarations visent à protéger l'intérêt social contre les conflits d'intérêts."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2757 pour la taxe sur les salaires ?",
+                    options: [
+                        "La déclaration annuelle de la taxe sur les salaires",
+                        "La déclaration mensuelle des salaires",
+                        "La déclaration des avantages en nature",
+                        "La déclaration des heures supplémentaires"
+                    ],
+                    correctAnswer: "La déclaration annuelle de la taxe sur les salaires",
+                    explanation: "Le formulaire 2757-SD déclare et liquide la taxe sur les salaires.",
+                    tip: "Cette taxe concerne surtout les entreprises non assujetties à la TVA."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les plus-values immobilières des sociétés ?",
+                    options: [
+                        "Le formulaire 2074",
+                        "Le formulaire 2058",
+                        "Le formulaire 2031",
+                        "Le formulaire 2065"
+                    ],
+                    correctAnswer: "Le formulaire 2074",
+                    explanation: "La 2074 déclare les cessions d'immeubles et de droits immobiliers.",
+                    tip: "Les plus-values immobilières bénéficient souvent de régimes particuliers."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2493 pour les sociétés ?",
+                    options: [
+                        "La déclaration des acomptes d'impôt sur les sociétés",
+                        "La déclaration des résultats",
+                        "La déclaration des investissements",
+                        "La déclaration des dividendes"
+                    ],
+                    correctAnswer: "La déclaration des acomptes d'impôt sur les sociétés",
+                    explanation: "Les acomptes d'IS sont payés en 4 fois (ou mensuellement pour les grandes entreprises).",
+                    tip: "Le calcul des acomptes est basé sur le résultat de l'avant-dernier exercice."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les opérations avec les paradis fiscaux ?",
+                    options: [
+                        "Le formulaire 2257-SD",
+                        "Le formulaire 2069-A",
+                        "Le formulaire 2059 A",
+                        "Le formulaire 2757"
+                    ],
+                    correctAnswer: "Le formulaire 2257-SD",
+                    explanation: "Cette déclaration recense les opérations avec des entités établies dans des États ou territoires non coopératifs.",
+                    tip: "Ces opérations font l'objet d'une surveillance fiscale renforcée."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2035 pour les sociétés ?",
+                    options: [
+                        "L'annexe sur les provisions",
+                        "La déclaration des amortissements",
+                        "L'état des stocks",
+                        "Le tableau des capitaux propres"
+                    ],
+                    correctAnswer: "L'annexe sur les provisions",
+                    explanation: "Cette annexe détaille les provisions pour risques et charges.",
+                    tip: "Les provisions sont souvent vérifiées en audit et en contrôle fiscal."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les cessions de titres de sociétés ?",
+                    options: [
+                        "Le formulaire 2074 pour les plus-values",
+                        "Le formulaire 2058",
+                        "Le formulaire 2069",
+                        "Le formulaire 2031"
+                    ],
+                    correctAnswer: "Le formulaire 2074 pour les plus-values",
+                    explanation: "Les cessions de titres génèrent des plus ou moins-values sur valeurs mobilières.",
+                    tip: "Le régime des plus-values mobilières est différent de celui des plus-values immobilières."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2050 pour les sociétés ?",
+                    options: [
+                        "Le tableau de détermination du résultat fiscal",
+                        "La déclaration des salaires",
+                        "L'état des immobilisations",
+                        "Le bilan comptable"
+                    ],
+                    correctAnswer: "Le tableau de détermination du résultat fiscal",
+                    explanation: "La 2050 recalcule le résultat fiscal à partir du résultat comptable.",
+                    tip: "Ce tableau est central dans la liasse fiscale."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les donations et apports ?",
+                    options: [
+                        "Le formulaire 2735 pour les donations",
+                        "Le formulaire 2058",
+                        "Le formulaire 2069",
+                        "Le formulaire 2031"
+                    ],
+                    correctAnswer: "Le formulaire 2735 pour les donations",
+                    explanation: "Les donations de parts sociales peuvent bénéficier d'exonérations sous conditions.",
+                    tip: "La fiscalité des transmissions d'entreprise est complexe mais offre des avantages."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2067 pour les sociétés ?",
+                    options: [
+                        "L'annexe sur les capitaux propres",
+                        "La déclaration des amortissements",
+                        "L'état des stocks",
+                        "Le tableau des provisions"
+                    ],
+                    correctAnswer: "L'annexe sur les capitaux propres",
+                    explanation: "Cette annexe détaille les mouvements des capitaux propres.",
+                    tip: "La structure des capitaux propres influence la capacité d'endettement."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les rémunérations des dirigeants ?",
+                    options: [
+                        "Le formulaire 2072 pour les rémunérations des dirigeants",
+                        "La DSN",
+                        "Le formulaire 2050",
+                        "Le formulaire 2031"
+                    ],
+                    correctAnswer: "Le formulaire 2072 pour les rémunérations des dirigeants",
+                    explanation: "Cette déclaration recense les rémunérations, avantages et dividendes des dirigeants.",
+                    tip: "La rémunération des dirigeants est souvent contrôlée par l'administration fiscale."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Qu'est-ce que la déclaration 2561 pour les salaires ?",
+                    options: [
+                        "La déclaration annuelle des salaires (DADS-U)",
+                        "La déclaration mensuelle des salaires",
+                        "La déclaration des acomptes",
+                        "La déclaration des charges sociales"
+                    ],
+                    correctAnswer: "La déclaration annuelle des salaires (DADS-U)",
+                    explanation: "Cette déclaration récapitule l'ensemble des rémunérations versées dans l'année.",
+                    tip: "La DADS-U a été en grande partie remplacée par la DSN mais reste nécessaire pour certains éléments."
+                },
+                {
+                    thematic: "Déclarations Obligatoires",
+                    question: "Quelle déclaration pour les investissements directs à l'étranger ?",
+                    options: [
+                        "La déclaration à la Banque de France (formulaire IDE)",
+                        "La déclaration fiscale 2257-SD",
+                        "La déclaration douanière",
+                        "La déclaration au registre du commerce"
+                    ],
+                    correctAnswer: "La déclaration à la Banque de France (formulaire IDE)",
+                    explanation: "Les IDE doivent être déclarés pour la balance des paiements.",
+                    tip: "Ces déclarations sont importantes pour la statistique nationale et le contrôle des changes."
+                }
+            ]
+        };
+
+        // DOM Elements
+        const settingsPanelEl = document.getElementById('settings-panel');
+        const quizContentEl = document.getElementById('quiz-content');
+        const questionCountEl = document.getElementById('question-count');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const questionCounterEl = document.getElementById('question-counter');
+        const currentScoreEl = document.getElementById('current-score');
+        const progressBarEl = document.getElementById('progress-bar');
+        const questionTextEl = document.getElementById('question-text');
+        const thematicBadgeEl = document.getElementById('thematic-badge');
+        const optionsContainerEl = document.getElementById('options-container');
+        const explanationBoxEl = document.getElementById('explanation-box');
+        const explanationTitleEl = document.getElementById('explanation-title');
+        const explanationTextEl = document.getElementById('explanation-text');
+        const tipBoxEl = document.getElementById('tip-box');
+        const tipTextEl = document.getElementById('tip-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const finishBtn = document.getElementById('finish-btn');
+        
+        // Modal Elements
+        const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
+        const finalScoreCorrectEl = document.getElementById('final-score-correct');
+        const finalScoreTotalEl = document.getElementById('final-score-total');
+        const finalScorePercentageEl = document.getElementById('final-score-percentage');
+        const finalRecommendationsEl = document.getElementById('final-recommendations');
+        const techSkillsEl = document.getElementById('tech-skills');
+        const techSkillsTextEl = document.getElementById('tech-skills-text');
+        const strategicSkillsEl = document.getElementById('strategic-skills');
+        const strategicSkillsTextEl = document.getElementById('strategic-skills-text');
+        const shortTermEl = document.getElementById('short-term');
+        const longTermEl = document.getElementById('long-term');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+        // Quiz State
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+        let questions = [];
+        let selectedQuestionCount = 40;
+
+        // Badge classes mapping
+        const badgeClasses = {
+            "Comptabilité": "badge-accounting",
+            "États Financiers": "badge-finance",
+            "Audit & Contrôle": "badge-audit",
+            "Fiscalité & Impôts": "badge-tax",
+            "Gestion d'Entreprise": "badge-management",
+            "Déclarations Obligatoires": "badge-declaration"
+        };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function filterQuestionsByDomain() {
+            const domains = {
+                'domain-accounting': "Comptabilité",
+                'domain-finance': "États Financiers", 
+                'domain-audit': "Audit & Contrôle",
+                'domain-tax': "Fiscalité & Impôts",
+                'domain-management': "Gestion d'Entreprise",
+                'domain-declaration': "Déclarations Obligatoires"
+            };
+            
+            const selectedDomains = [];
+            for (const [id, domain] of Object.entries(domains)) {
+                if (document.getElementById(id).checked) {
+                    selectedDomains.push(domain);
+                }
+            }
+            
+            if (selectedDomains.length === 0) {
+                return [...quizData.questions];
+            }
+            
+            return quizData.questions.filter(q => selectedDomains.includes(q.thematic));
+        }
+
+        function startQuiz() {
+            selectedQuestionCount = parseInt(questionCountEl.value);
+            
+            let filteredQuestions = filterQuestionsByDomain();
+            
+            if (filteredQuestions.length === 0) {
+                alert('Veuillez sélectionner au moins un domaine à évaluer.');
+                return;
+            }
+            
+            if (filteredQuestions.length < selectedQuestionCount) {
+                alert(`Seulement ${filteredQuestions.length} questions disponibles dans les domaines sélectionnés. Le quiz sera limité à ce nombre.`);
+                selectedQuestionCount = filteredQuestions.length;
+            }
+            
+            const shuffledQuestions = shuffleArray(filteredQuestions);
+            questions = shuffledQuestions.slice(0, selectedQuestionCount);
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            
+            settingsPanelEl.classList.add('d-none');
+            quizContentEl.classList.remove('d-none');
+            
+            displayQuestion(currentQuestionIndex);
+            updateScoreDisplay();
+            resultsModal.hide();
+        }
+
+        function displayQuestion(index) {
+            explanationBoxEl.classList.add('d-none');
+            tipBoxEl.classList.add('d-none');
+            
+            const question = questions[index];
+            questionTextEl.textContent = question.question;
+            
+            thematicBadgeEl.textContent = question.thematic;
+            thematicBadgeEl.className = 'thematic-badge';
+            thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-accounting');
+            
+            optionsContainerEl.innerHTML = '';
+            
+            question.options.forEach(optionText => {
+                const button = document.createElement('button');
+                button.textContent = optionText;
+                button.classList.add('btn', 'option-btn');
+                button.onclick = () => selectAnswer(button, optionText, index);
+                optionsContainerEl.appendChild(button);
+            });
+            
+            updateNavigation();
+            updateProgressBar();
+            
+            if (userAnswers[index] !== null) {
+                showAnswerFeedback(index);
+            }
+        }
+        
+        function selectAnswer(button, selectedAnswer, questionIndex) {
+            if (userAnswers[questionIndex] !== null) return;
+            
+            const question = questions[questionIndex];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+            
+            userAnswers[questionIndex] = {
+                selected: selectedAnswer,
+                correct: question.correctAnswer,
+                isCorrect: isCorrect
+            };
+            
+            if(isCorrect) {
+                score++;
+            }
+            updateScoreDisplay();
+            showAnswerFeedback(questionIndex);
+        }
+
+        function showAnswerFeedback(index) {
+            const userAnswer = userAnswers[index];
+            if (!userAnswer) return;
+
+            const question = questions[index];
+
+            const optionButtons = optionsContainerEl.querySelectorAll('.option-btn');
+            optionButtons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.textContent === userAnswer.correct) {
+                    btn.classList.add('correct');
+                } else if (btn.textContent === userAnswer.selected) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            explanationTextEl.textContent = question.explanation;
+            if (userAnswer.isCorrect) {
+                explanationTitleEl.textContent = "✅ Correct ! Connaissance validée";
+                explanationBoxEl.className = 'explanation-correct';
+            } else {
+                explanationTitleEl.textContent = "💡 À retenir pour devenir Auditrice/DAF";
+                explanationBoxEl.className = 'explanation-incorrect';
+            }
+            explanationBoxEl.classList.remove('d-none');
+            
+            if (question.tip) {
+                tipTextEl.textContent = question.tip;
+                tipBoxEl.classList.remove('d-none');
+            }
+        }
+
+        function updateNavigation() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.classList.toggle('d-none', currentQuestionIndex === questions.length - 1);
+            finishBtn.classList.toggle('d-none', currentQuestionIndex !== questions.length - 1);
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBarEl.style.width = `${progress}%`;
+            progressBarEl.setAttribute('aria-valuenow', progress);
+            questionCounterEl.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+        }
+        
+        function updateScoreDisplay() {
+            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        function handleNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function handlePrev() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function calculateSkillLevels() {
+            const thematicScores = {};
+            const difficultyScores = { technical: 0, strategic: 0 };
+            let totalAnswered = 0;
+            
+            userAnswers.forEach((answer, index) => {
+                if (answer !== null) {
+                    totalAnswered++;
+                    const question = questions[index];
+                    
+                    if (!thematicScores[question.thematic]) {
+                        thematicScores[question.thematic] = { correct: 0, total: 0 };
+                    }
+                    thematicScores[question.thematic].total++;
+                    if (answer.isCorrect) {
+                        thematicScores[question.thematic].correct++;
+                    }
+                    
+                    if (question.thematic.includes("Comptabilité") || question.thematic.includes("Déclarations")) {
+                        if (answer.isCorrect) difficultyScores.technical++;
+                    } else {
+                        if (answer.isCorrect) difficultyScores.strategic++;
+                    }
+                }
+            });
+            
+            return {
+                thematicScores,
+                technicalScore: totalAnswered > 0 ? (difficultyScores.technical / totalAnswered) * 100 : 0,
+                strategicScore: totalAnswered > 0 ? (difficultyScores.strategic / totalAnswered) * 100 : 0
+            };
+        }
+
+        function showFinalResults() {
+            const percentage = (score / questions.length) * 100;
+            const skillAnalysis = calculateSkillLevels();
+            
+            let scoreColor, level, recommendationsHtml, shortTerm, longTerm;
+            
+            if (percentage >= 90) {
+                scoreColor = '#10b981';
+                level = "Expert Audit & Finance";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-crown text-warning"></i> Excellence professionnelle !</h5>
+                    <p>Vous maîtrisez les compétences techniques et stratégiques nécessaires pour devenir auditrice financière ou DAF. Votre profil correspond aux cadres financiers seniors.</p>
+                    <div class="alert alert-success">
+                        <i class="fas fa-rocket"></i> <strong>Prochaine étape :</strong> Postulez à des postes d'auditrice senior ou de contrôleuse de gestion avant d'évoluer vers la direction financière.
+                    </div>
+                `;
+                shortTerm = "Certifications complémentaires (DESCF, CPA), expérience en cabinet d'audit Big Four";
+                longTerm = "Auditrice financière senior, Directrice Administrative et Financière, Responsable du contrôle de gestion groupe";
+            } else if (percentage >= 75) {
+                scoreColor = '#3b82f6';
+                level = "Compétent Avancé";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-medal text-info"></i> Très bon niveau technique !</h5>
+                    <p>Vous avez les bases solides pour évoluer vers l'audit ou la direction financière. Concentrez-vous sur l'acquisition d'expérience pratique et le développement des compétences managériales.</p>
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb"></i> <strong>Focus :</strong> Approfondissez la fiscalité d'entreprise et les normes IFRS pour l'audit international.
+                    </div>
+                `;
+                shortTerm = "Stage en cabinet d'audit, formation en fiscalité approfondie, pratique des logiciels de gestion financière";
+                longTerm = "Auditrice junior puis confirmée, Contrôleuse de gestion, Adjointe au DAF";
+            } else if (percentage >= 60) {
+                scoreColor = '#f59e0b';
+                level = "Intermédiaire";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-graduation-cap text-warning"></i> Bonnes bases à consolider</h5>
+                    <p>Vous avez les connaissances fondamentales mais devez approfondir certains domaines clés pour viser l'audit ou la direction financière.</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-book"></i> <strong>Priorité :</strong> Renforcez vos connaissances en audit, contrôle interne et analyse financière.
+                    </div>
+                `;
+                shortTerm = "Formations ciblées en audit et contrôle de gestion, certifications de base (DCG), pratique de la comptabilité analytique";
+                longTerm = "Assistante comptable senior, Contrôleuse de gestion junior, préparation au DSCG";
+            } else if (percentage >= 40) {
+                scoreColor = '#ef4444';
+                level = "Débutant";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-book-open text-primary"></i> Début de parcours</h5>
+                    <p>Votre licence en comptabilité et gestion vous donne les bases. Il vous faut maintenant acquérir les compétences pratiques spécifiques à l'audit et la finance d'entreprise.</p>
+                    <div class="alert alert-primary">
+                        <i class="fas fa-redo"></i> <strong>Action :</strong> Commencez par maîtriser parfaitement la comptabilité générale et les états financiers.
+                    </div>
+                `;
+                shortTerm = "Formation pratique en comptabilité, stages en entreprise, préparation au DCG";
+                longTerm = "Comptable confirmée, préparation au DSCG, éventuellement Master CCA ou Finance";
+            } else {
+                scoreColor = '#dc2626';
+                level = "Besoin de Formation";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-exclamation-triangle text-danger"></i> Nécessite un renforcement important</h5>
+                    <p>Vous devez reprendre les fondamentaux avant de pouvoir viser des fonctions d'audit ou de direction financière.</p>
+                    <div class="alert alert-danger">
+                        <i class="fas fa-university"></i> <strong>Urgence :</strong> Programme de formation structuré sur les bases comptables et financières.
+                    </div>
+                `;
+                shortTerm = "Cours de remise à niveau en comptabilité, stages d'observation, formation aux logiciels comptables";
+                longTerm = "Comptable débutante, poursuite d'études avec DCG, acquisition progressive d'expérience";
+            }
+
+            finalScoreCorrectEl.textContent = score;
+            finalScoreTotalEl.textContent = questions.length;
+            finalScorePercentageEl.textContent = `${percentage.toFixed(0)}% - ${level}`;
+            finalScorePercentageEl.style.background = `linear-gradient(135deg, ${scoreColor} 0%, ${scoreColor}00 100%)`;
+            
+            techSkillsEl.style.width = `${skillAnalysis.technicalScore}%`;
+            strategicSkillsEl.style.width = `${skillAnalysis.strategicScore}%`;
+            techSkillsTextEl.textContent = `Compétences techniques : ${skillAnalysis.technicalScore.toFixed(0)}%`;
+            strategicSkillsTextEl.textContent = `Compétences stratégiques : ${skillAnalysis.strategicScore.toFixed(0)}%`;
+            
+            finalRecommendationsEl.innerHTML = recommendationsHtml;
+            shortTermEl.textContent = shortTerm;
+            longTermEl.textContent = longTerm;
+            
+            const thematicAnalysis = Object.entries(skillAnalysis.thematicScores)
+                .map(([theme, scores]) => {
+                    const themePercentage = (scores.correct / scores.total) * 100;
+                    return `<div class="mb-2">
+                        <small>${theme}: <strong>${themePercentage.toFixed(0)}%</strong> (${scores.correct}/${scores.total})</small>
+                        <div class="progress" style="height: 5px;">
+                            <div class="progress-bar" style="width: ${themePercentage}%"></div>
+                        </div>
+                    </div>`;
+                })
+                .join('');
+            
+            if (thematicAnalysis) {
+                finalRecommendationsEl.innerHTML += `
+                    <div class="mt-3">
+                        <h6><i class="fas fa-chart-bar"></i> Analyse par domaine</h6>
+                        ${thematicAnalysis}
+                    </div>
+                `;
+            }
+
+            resultsModal.show();
+        }
+
+        function restartQuiz() {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+            resultsModal.hide();
+        }
+
+        startQuizBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrev);
+        finishBtn.addEventListener('click', showFinalResults);
+        restartQuizBtn.addEventListener('click', restartQuiz);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+        });
+    </script>
+</body>
+</html>
