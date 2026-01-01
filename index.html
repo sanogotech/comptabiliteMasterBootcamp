@@ -1,1 +1,1945 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Guide Audit & Finance - Devenir Auditrice Financière ou DAF</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #10b981;
+            --accent-color: #8b5cf6;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-top: 0;
+            background-attachment: fixed;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 5px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-badge {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem;
+        }
+
+        .nav-tabs {
+            border: none;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .nav-tabs .nav-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            min-height: 600px;
+        }
+
+        .tab-pane {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .guide-card {
+            border: none;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .guide-card.audit {
+            border-left-color: var(--accent-color);
+        }
+
+        .guide-card.finance {
+            border-left-color: var(--secondary-color);
+        }
+
+        .guide-card.tax {
+            border-left-color: var(--danger-color);
+        }
+
+        .guide-card.management {
+            border-left-color: var(--warning-color);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon.primary {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.2) 100%);
+            color: var(--primary-color);
+        }
+
+        .card-icon.accent {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.2) 100%);
+            color: var(--accent-color);
+        }
+
+        .card-icon.success {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.2) 100%);
+            color: var(--secondary-color);
+        }
+
+        .card-icon.warning {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.2) 100%);
+            color: var(--warning-color);
+        }
+
+        .guide-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .guide-card ul {
+            padding-left: 1.2rem;
+        }
+
+        .guide-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .topic-badge {
+            background-color: #f1f5f9;
+            color: var(--dark-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Progress Trackers */
+        .progress-tracker {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px dashed var(--border-color);
+        }
+
+        .progress-tracker h5 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .checklist-item.completed label {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+
+        /* Resources */
+        .resource-card {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.1);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+
+        /* Roadmap */
+        .roadmap-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 3px;
+        }
+
+        .roadmap-step {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .roadmap-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-step::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .roadmap-step.completed::before {
+            background: var(--secondary-color);
+        }
+
+        .roadmap-step.current::before {
+            background: var(--warning-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
+        .roadmap-step h5 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .roadmap-step .duration {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Statistics */
+        .stats-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stats-label {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        /* Downloadables */
+        .download-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f8fafc;
+        }
+
+        .download-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+
+        .download-info {
+            flex: 1;
+        }
+
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .tab-content {
+                padding: 1.5rem;
+            }
+            
+            .header {
+                padding: 3rem 0 2rem;
+            }
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
+        }
+
+        .finance-icons {
+            display: inline-block;
+            margin: 0 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="header-badge">
+                        <i class="fas fa-bullseye me-2"></i>Objectif 3 ans : Auditrice Financière / DAF
+                    </span>
+                    <div class="d-flex gap-2">
+                        <span class="badge bg-light text-dark">
+                            <i class="fas fa-user-graduate me-1"></i>Licence CGE
+                        </span>
+                        <span class="badge bg-light text-dark">
+                            <i class="fas fa-calendar-alt me-1"></i>Plan 2024-2027
+                        </span>
+                    </div>
+                </div>
+                
+                <h1>
+                    <i class="fas fa-chart-line finance-icons"></i>
+                    Portail Guide Audit & Finance
+                    <i class="fas fa-file-invoice-dollar finance-icons"></i>
+                </h1>
+                <p class="lead mb-4" style="max-width: 800px;">
+                    Votre guide complet pour maîtriser la comptabilité, les états financiers, l'audit, la fiscalité et toutes les compétences nécessaires pour devenir auditrice financière ou Directrice Administrative et Financière.
+                </p>
+                
+                <div class="row g-3">
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-white">120+</div>
+                            <div class="text-light">Questions Quiz</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-white">6</div>
+                            <div class="text-light">Domaines Clés</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-white">8</div>
+                            <div class="text-light">Guides Complets</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-white">3</div>
+                            <div class="text-light">Années Objectif</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs-container">
+            <ul class="nav nav-tabs" id="guideTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
+                        <i class="fas fa-home"></i> Vue d'ensemble
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="accounting-tab" data-bs-toggle="tab" data-bs-target="#accounting" type="button" role="tab">
+                        <i class="fas fa-calculator"></i> Comptabilité
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance" type="button" role="tab">
+                        <i class="fas fa-chart-line"></i> États Financiers
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="audit-tab" data-bs-toggle="tab" data-bs-target="#audit" type="button" role="tab">
+                        <i class="fas fa-search-dollar"></i> Audit & Contrôle
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tax-tab" data-bs-toggle="tab" data-bs-target="#tax" type="button" role="tab">
+                        <i class="fas fa-file-invoice-dollar"></i> Fiscalité
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" type="button" role="tab">
+                        <i class="fas fa-briefcase"></i> Gestion d'Entreprise
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="declarations-tab" data-bs-toggle="tab" data-bs-target="#declarations" type="button" role="tab">
+                        <i class="fas fa-file-alt"></i> Déclarations
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="roadmap-tab" data-bs-toggle="tab" data-bs-target="#roadmap" type="button" role="tab">
+                        <i class="fas fa-road"></i> Roadmap 3 ans
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="guideTabsContent">
+            <!-- Vue d'ensemble -->
+            <div class="tab-pane fade show active" id="overview" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Vue d'ensemble du Parcours</h2>
+                <p class="lead mb-4">Bienvenue sur votre guide personnalisé pour devenir auditrice financière ou DAF. Ce portail rassemble toutes les ressources et connaissances nécessaires pour atteindre votre objectif en 3 ans.</p>
+                
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <div class="guide-card">
+                            <div class="card-icon primary">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4>Votre Objectif en 3 Ans</h4>
+                            <p>À partir de votre licence en Comptabilité et Gestion d'Entreprise, vous visez un poste d'<strong>auditrice financière</strong> ou de <strong>Directrice Administrative et Financière (DAF)</strong>.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-check-circle text-success me-2"></i>Compétences à maîtriser :</h6>
+                                    <ul>
+                                        <li>Comptabilité générale et analytique</li>
+                                        <li>Analyse des états financiers</li>
+                                        <li>Procédures d'audit et contrôle interne</li>
+                                        <li>Fiscalité d'entreprise</li>
+                                        <li>Gestion financière et trésorerie</li>
+                                        <li>Déclarations sociales et fiscales</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-graduation-cap text-primary me-2"></i>Certifications recommandées :</h6>
+                                    <ul>
+                                        <li>DCG (Diplôme de Comptabilité et Gestion)</li>
+                                        <li>DSCG (Diplôme Supérieur de Comptabilité et Gestion)</li>
+                                        <li>Certifications en audit (CIA, etc.)</li>
+                                        <li>Formations spécifiques DAF</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stats-card mb-3">
+                            <div class="stats-number">36</div>
+                            <div class="stats-label">Mois pour atteindre l'objectif</div>
+                        </div>
+                        <div class="stats-card mb-3">
+                            <div class="stats-number">6</div>
+                            <div class="stats-label">Domaines de compétence</div>
+                        </div>
+                        <div class="stats-card">
+                            <div class="stats-number">120+</div>
+                            <div class="stats-label">Connaissances à acquérir</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-rocket text-primary me-2"></i>Démarrage Rapide</h4>
+                            <p>Pour commencer immédiatement votre parcours :</p>
+                            <ol>
+                                <li><strong>Testez vos connaissances</strong> avec le quiz complet (120 questions)</li>
+                                <li><strong>Identifiez vos points forts et faibles</strong></li>
+                                <li><strong>Consultez la roadmap sur 3 ans</strong> pour planifier votre progression</li>
+                                <li><strong>Explorez les ressources</strong> par domaine de compétence</li>
+                            </ol>
+                            <button class="btn btn-primary mt-2" onclick="startQuiz()">
+                                <i class="fas fa-play-circle me-2"></i>Lancer le Quiz d'Évaluation
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-lightbulb text-warning me-2"></i>Conseils Clés</h4>
+                            <ul>
+                                <li><strong>Pratiquez régulièrement</strong> : La comptabilité et l'audit s'apprennent par la pratique</li>
+                                <li><strong>Suivez l'actualité</strong> : Les normes comptables et fiscales évoluent constamment</li>
+                                <li><strong>Développez votre réseau</strong> : Contactez des professionnels du secteur</li>
+                                <li><strong>Mixez théorie et pratique</strong> : Alternez formations et expériences professionnelles</li>
+                                <li><strong>Soyez patiente et persévérante</strong> : Le parcours vers un poste de DAF prend du temps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comptabilité -->
+            <div class="tab-pane fade" id="accounting" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide Comptabilité</h2>
+                <p class="lead mb-4">Maîtrisez les fondamentaux de la comptabilité générale et analytique, base essentielle pour l'audit et la direction financière.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon primary">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Plan Comptable Général (PCG)</h4>
+                            <p>Structure et logique du PCG, classes de comptes, principes comptables fondamentaux.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Classes 1 à 7</span>
+                                <span class="topic-badge">Principes comptables</span>
+                                <span class="topic-badge">Journal général</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon primary">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4>Écritures Comptables</h4>
+                            <p>Enregistrement des opérations courantes : achats, ventes, salaires, investissements, emprunts.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Journalisation</span>
+                                <span class="topic-badge">Balance comptable</span>
+                                <span class="topic-badge">Grand livre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon primary">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Immobilisations</h4>
+                            <p>Comptabilisation, amortissement (linéaire, dégressif), cessions, réévaluations.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Comptes 2</span>
+                                <span class="topic-badge">Amortissements</span>
+                                <span class="topic-badge">Plus-values</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-primary me-2"></i>Checklist Comptabilité</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="acc1" onchange="updateProgress('acc1')">
+                                <label for="acc1">Maîtriser le plan comptable général (PCG)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="acc2" onchange="updateProgress('acc2')">
+                                <label for="acc2">Savoir enregistrer les écritures courantes</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="acc3" onchange="updateProgress('acc3')">
+                                <label for="acc3">Comprendre les amortissements et provisions</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="acc4" onchange="updateProgress('acc4')">
+                                <label for="acc4">Gérer la comptabilité clients/fournisseurs</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="acc5" onchange="updateProgress('acc5')">
+                                <label for="acc5">Maîtriser la TVA et ses déclarations</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-download text-primary me-2"></i>Ressources Téléchargeables</h4>
+                            <div class="download-card">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h6>Guide PCG 2024</h6>
+                                    <small>Plan comptable général avec commentaires</small>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                            <div class="download-card">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-excel"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h6>Modèle Grand Livre Excel</h6>
+                                    <small>Template automatisé pour suivi comptable</small>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                            <div class="download-card">
+                                <div class="download-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h6>Fiches Révision Comptabilité</h6>
+                                    <small>Résumé des principales écritures</small>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-play-circle text-primary me-2"></i>Exercices Pratiques</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Cas 1 : Achat d'immobilisation</h6>
+                            <p>Achat d'un véhicule 30 000€ HT, TVA 20%, payé à 60% au comptant, le reste à crédit.</p>
+                            <button class="btn btn-sm btn-outline-primary">Voir la solution</button>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Cas 2 : Vente avec escompte</h6>
+                            <p>Vente de marchandises 15 000€ HT avec escompte de 2% pour paiement à 30 jours.</p>
+                            <button class="btn btn-sm btn-outline-primary">Voir la solution</button>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Cas 3 : Amortissement dégressif</h6>
+                            <p>Matériel informatique 8 000€, durée 4 ans, amortissement dégressif avec coefficient 1.75.</p>
+                            <button class="btn btn-sm btn-outline-primary">Voir la solution</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- États Financiers -->
+            <div class="tab-pane fade" id="finance" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide États Financiers</h2>
+                <p class="lead mb-4">Analysez et interprétez les états financiers pour évaluer la santé et la performance d'une entreprise.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="guide-card finance">
+                            <div class="card-icon success">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Bilan Comptable</h4>
+                            <p>Structure actif/passif, analyse du patrimoine, équilibre financier, ratios de structure.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Actif immobilisé</span>
+                                <span class="topic-badge">Actif circulant</span>
+                                <span class="topic-badge">Capitaux propres</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card finance">
+                            <div class="card-icon success">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Compte de Résultat</h4>
+                            <p>Analyse des produits et charges, marges, EBITDA, capacité d'autofinancement.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Chiffre d'affaires</span>
+                                <span class="topic-badge">Résultat d'exploitation</span>
+                                <span class="topic-badge">Résultat net</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card finance">
+                            <div class="card-icon success">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h4>Flux de Trésorerie</h4>
+                            <p>Tableau de flux (IAS 7), analyse des flux opérationnels, d'investissement, de financement.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Free cash flow</span>
+                                <span class="topic-badge">Trésorerie nette</span>
+                                <span class="topic-badge">IAS 7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-calculator text-success me-2"></i>Ratios Financiers Clés</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Ratio</th>
+                                            <th>Calcul</th>
+                                            <th>Interprétation</th>
+                                            <th>Cible</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Liquidité générale</strong></td>
+                                            <td>Actif circulant / Passif circulant</td>
+                                            <td>Capacité à payer les dettes court terme</td>
+                                            <td>> 1.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Endettement</strong></td>
+                                            <td>Dettes financières / Capitaux propres</td>
+                                            <td>Niveau de levier financier</td>
+                                            <td>< 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rentabilité économique</strong></td>
+                                            <td>Résultat d'exploitation / Capitaux investis</td>
+                                            <td>Performance des capitaux investis</td>
+                                            <td>> Coût du capital</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>ROE (Return on Equity)</strong></td>
+                                            <td>Résultat net / Capitaux propres</td>
+                                            <td>Rentabilité pour les actionnaires</td>
+                                            <td>> 10%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rotation des stocks</strong></td>
+                                            <td>Coût des marchandises vendues / Stock moyen</td>
+                                            <td>Efficacité de la gestion des stocks</td>
+                                            <td>Élevé</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-success me-2"></i>Checklist Analyse Financière</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="fin1" onchange="updateProgress('fin1')">
+                                <label for="fin1">Savoir lire et interpréter un bilan</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="fin2" onchange="updateProgress('fin2')">
+                                <label for="fin2">Analyser un compte de résultat</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="fin3" onchange="updateProgress('fin3')">
+                                <label for="fin3">Maîtriser le tableau de flux de trésorerie</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="fin4" onchange="updateProgress('fin4')">
+                                <label for="fin4">Calculer et interpréter les ratios clés</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="fin5" onchange="updateProgress('fin5')">
+                                <label for="fin5">Réaliser une analyse sectorielle</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-chart-line text-success me-2"></i>Analyse de Cas : Société XYZ</h4>
+                    <p>Analysez les états financiers de la société XYZ et identifiez ses points forts et faibles :</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Données Clés</h6>
+                            <ul>
+                                <li>CA : 5M€ (+15%)</li>
+                                <li>Résultat net : 300k€</li>
+                                <li>Dettes financières : 2M€</li>
+                                <li>Capitaux propres : 1.5M€</li>
+                                <li>BFR : 800k€</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Questions d'Analyse</h6>
+                            <ol>
+                                <li>Quel est le taux d'endettement ?</li>
+                                <li>Calculez la rentabilité des capitaux propres</li>
+                                <li>La croissance est-elle financée par l'endettement ?</li>
+                                <li>Quels risques identifiez-vous ?</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Exercice Pratique</h6>
+                            <p>Proposez 3 recommandations pour améliorer la situation financière.</p>
+                            <textarea class="form-control" rows="4" placeholder="Votre analyse..."></textarea>
+                            <button class="btn btn-success mt-2">Soumettre l'analyse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audit & Contrôle -->
+            <div class="tab-pane fade" id="audit" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide Audit & Contrôle</h2>
+                <p class="lead mb-4">Maîtrisez les normes d'audit, les procédures de contrôle et les techniques de détection des anomalies.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="guide-card audit">
+                            <div class="card-icon accent">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Contrôle Interne</h4>
+                            <p>Système de contrôle interne, évaluation des risques, séparation des fonctions, procédures de contrôle.</p>
+                            <ul>
+                                <li>Composantes du contrôle interne (COSO)</li>
+                                <li>Cartographie des processus et risques</li>
+                                <li>Tests de conformité et tests substantifs</li>
+                                <li>Lettre de recommandations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="guide-card audit">
+                            <div class="card-icon accent">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>Audit des Comptes</h4>
+                            <p>Normes ISA, planification de mission, échantillonnage, preuves d'audit, documentation, rapport d'audit.</p>
+                            <ul>
+                                <li>Normes Internationales d'Audit (ISA)</li>
+                                <li>Évaluation du risque d'audit</li>
+                                <li>Programme de travail d'audit</li>
+                                <li>Rapport avec/sans réserve</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-list-check text-accent me-2"></i>Checklist d'Audit des Achats</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Contrôles à effectuer :</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud1">
+                                        <label class="form-check-label" for="aud1">Séparation commande/réception/paiement</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud2">
+                                        <label class="form-check-label" for="aud2">Autorisations hiérarchiques des commandes</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud3">
+                                        <label class="form-check-label" for="aud3">Concordance commande/facture/livraison</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud4">
+                                        <label class="form-check-label" for="aud4">Contrôle des prix et conditions</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Tests à réaliser :</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud5">
+                                        <label class="form-check-label" for="aud5">Échantillon de commandes vérifiées</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud6">
+                                        <label class="form-check-label" for="aud6">Circularisation fournisseurs</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="aud7">
+                                        <label class="form-check-label" for="aud7">Analyse des écarts de prix</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="aud8">
+                                        <label class="form-check-label" for="aud8">Vérification des délais de paiement</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-accent me-2"></i>Compétences Audit</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="audc1" onchange="updateProgress('audc1')">
+                                <label for="audc1">Comprendre les normes ISA</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="audc2" onchange="updateProgress('audc2')">
+                                <label for="audc2">Maîtriser le contrôle interne</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="audc3" onchange="updateProgress('audc3')">
+                                <label for="audc3">Conduire des tests d'audit</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="audc4" onchange="updateProgress('audc4')">
+                                <label for="audc4">Rédiger un rapport d'audit</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="audc5" onchange="updateProgress('audc5')">
+                                <label for="audc5">Détecter les anomalies et fraudes</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-exclamation-triangle text-warning me-2"></i>Détection des Anomalies et Fraudes</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Signaux d'alerte :</h6>
+                            <ul>
+                                <li>Écarts inexpliqués entre comptabilité et réalité</li>
+                                <li>Modifications fréquentes des écritures</li>
+                                <li>Contre-passations inhabituelles</li>
+                                <li>Fournisseurs ou clients inhabituels</li>
+                                <li>Transactions rondes ou à dates particulières</li>
+                                <li>Refus d'accès à certaines informations</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Procédures de vérification :</h6>
+                            <ol>
+                                <li>Analytique comparative (comparaison périodes)</li>
+                                <li>Vérification des justificatifs originaux</li>
+                                <li>Contrôles de cohérence interne</li>
+                                <li>Vérifications externes (circularisations)</li>
+                                <li>Tests de surprise</li>
+                                <li>Analyse des journaux de modifications</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fiscalité -->
+            <div class="tab-pane fade" id="tax" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide Fiscalité & Impôts</h2>
+                <p class="lead mb-4">Maîtrisez la fiscalité des entreprises : TVA, impôt sur les sociétés, optimisation fiscale, déclarations.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="guide-card tax">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.2) 100%); color: var(--danger-color);">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <h5>TVA</h5>
+                            <small>Taux, déductibilité, régimes, déclarations, crédit de TVA.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="guide-card tax">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.2) 100%); color: var(--danger-color);">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h5>Impôt Sociétés</h5>
+                            <small>Calcul, acomptes, régimes, intégration fiscale, optimisation.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="guide-card tax">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.2) 100%); color: var(--danger-color);">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <h5>Impôts Locaux</h5>
+                            <small>CET, CFE, CVAE, taxes foncières, déclarations.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="guide-card tax">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.2) 100%); color: var(--danger-color);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h5>Régimes Spéciaux</h5>
+                            <small>Mères-filiales, intégration, consolidation, niches fiscales.</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-calculator text-danger me-2"></i>Calcul de l'Impôt sur les Sociétés</h4>
+                            <p>Exercice : Société ABC, résultat comptable 500 000€. Calculez l'IS à payer.</p>
+                            <div class="mb-3">
+                                <label class="form-label">Résultat comptable :</label>
+                                <input type="number" class="form-control" value="500000" id="fiscalResult">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Réintégrations fiscales :</label>
+                                <input type="number" class="form-control" value="20000" id="fiscalReintegrations">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Déductions fiscales :</label>
+                                <input type="number" class="form-control" value="30000" id="fiscalDeductions">
+                            </div>
+                            <button class="btn btn-danger" onclick="calculateTax()">Calculer l'IS</button>
+                            <div id="taxResult" class="mt-3 alert alert-info d-none"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-danger me-2"></i>Compétences Fiscales</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="tax1" onchange="updateProgress('tax1')">
+                                <label for="tax1">Maîtriser la TVA (régimes, déclarations)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="tax2" onchange="updateProgress('tax2')">
+                                <label for="tax2">Calculer l'impôt sur les sociétés</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="tax3" onchange="updateProgress('tax3')">
+                                <label for="tax3">Gérer les impôts locaux (CET, CFE, CVAE)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="tax4" onchange="updateProgress('tax4')">
+                                <label for="tax4">Comprendre les régimes spéciaux</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="tax5" onchange="updateProgress('tax5')">
+                                <label for="tax5">Optimiser la fiscalité d'entreprise</label>
+                            </div>
+                        </div>
+                        
+                        <div class="guide-card mt-3">
+                            <h6><i class="fas fa-calendar-alt text-danger me-2"></i>Calendrier Fiscal 2024</h6>
+                            <ul>
+                                <li><strong>15 mars</strong> : 1er acompte IS</li>
+                                <li><strong>15 avril</strong> : Déclaration TVA trim 1</li>
+                                <li><strong>15 mai</strong> : 2ème acompte IS</li>
+                                <li><strong>15 juillet</strong> : Déclaration TVA trim 2</li>
+                                <li><strong>15 septembre</strong> : 3ème acompte IS</li>
+                                <li><strong>15 octobre</strong> : Déclaration TVA trim 3</li>
+                                <li><strong>15 décembre</strong> : 4ème acompte IS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-lightbulb text-warning me-2"></i>Optimisation Fiscale Légale</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Crédits d'impôt</h6>
+                            <ul>
+                                <li>Crédit d'impôt recherche (CIR)</li>
+                                <li>Crédit d'impôt innovation (CII)</li>
+                                <li>Crédit d'impôt famille</li>
+                                <li>Crédit d'impôt compétitivité emploi (CICE)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Régimes avantageux</h6>
+                            <ul>
+                                <li>Jeune entreprise innovante (JEI)</li>
+                                <li>Sociétés mères et filiales</li>
+                                <li>Intégration fiscale</li>
+                                <li>Régime des fusions-scissions</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Aménagements</h6>
+                            <ul>
+                                <li>Report déficitaire</li>
+                                <li>Amortissements exceptionnels</li>
+                                <li>Provisions réglementées</li>
+                                <li>Plus-values à long terme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestion d'Entreprise -->
+            <div class="tab-pane fade" id="management" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide Gestion d'Entreprise</h2>
+                <p class="lead mb-4">Développez les compétences managériales et stratégiques nécessaires à la direction financière.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="guide-card management">
+                            <div class="card-icon warning">
+                                <i class="fas fa-cash-register"></i>
+                            </div>
+                            <h4>Gestion de Trésorerie</h4>
+                            <p>Prévisionnel de trésorerie, optimisation des flux, gestion des excédents et déficits, relations bancaires.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Budget de trésorerie</span>
+                                <span class="topic-badge">Gestion du BFR</span>
+                                <span class="topic-badge">Placements</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="guide-card management">
+                            <div class="card-icon warning">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Contrôle de Gestion</h4>
+                            <p>Budgétisation, analyse des écarts, coûts complets, tableaux de bord, reporting de gestion.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Budget</span>
+                                <span class="topic-badge">Coûts complets</span>
+                                <span class="topic-badge">Tableaux de bord</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-project-diagram text-warning me-2"></i>Tableau de Bord DAF</h4>
+                            <p>Indicateurs clés de performance pour le pilotage financier :</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Chiffre d'affaires (€)</label>
+                                        <input type="number" class="form-control" value="5000000" id="caInput">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Résultat net (€)</label>
+                                        <input type="number" class="form-control" value="350000" id="netResultInput">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Trésorerie (€)</label>
+                                        <input type="number" class="form-control" value="800000" id="cashInput">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Dettes financières (€)</label>
+                                        <input type="number" class="form-control" value="1500000" id="debtInput">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Capitaux propres (€)</label>
+                                        <input type="number" class="form-control" value="2000000" id="equityInput">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">BFR (€)</label>
+                                        <input type="number" class="form-control" value="600000" id="bfrInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-warning" onclick="updateDashboard()">Mettre à jour le tableau de bord</button>
+                            <div id="dashboardResults" class="mt-3"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-warning me-2"></i>Compétences Management</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="mgmt1" onchange="updateProgress('mgmt1')">
+                                <label for="mgmt1">Élaborer un business plan</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="mgmt2" onchange="updateProgress('mgmt2')">
+                                <label for="mgmt2">Gérer la trésorerie et le BFR</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="mgmt3" onchange="updateProgress('mgmt3')">
+                                <label for="mgmt3">Piloter avec des tableaux de bord</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="mgmt4" onchange="updateProgress('mgmt4')">
+                                <label for="mgmt4">Manager une équipe financière</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="mgmt5" onchange="updateProgress('mgmt5')">
+                                <label for="mgmt5">Négocier avec les banques</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-users text-warning me-2"></i>Management d'Équipe Financière</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Rôles à manager :</h6>
+                            <ul>
+                                <li>Comptable général</li>
+                                <li>Contrôleur de gestion</li>
+                                <li>Responsable paie</li>
+                                <li>Trésorier</li>
+                                <li>Assistant(e) comptable</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Compétences managériales :</h6>
+                            <ul>
+                                <li>Délégation et suivi</li>
+                                <li>Communication interne</li>
+                                <li>Formation et développement</li>
+                                <li>Évaluation de performance</li>
+                                <li>Résolution de conflits</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Outils de management :</h6>
+                            <ul>
+                                <li>Réunions d'équipe régulières</li>
+                                <li>Entretiens individuels</li>
+                                <li>Tableaux de bord d'activité</li>
+                                <li>Plans de formation</li>
+                                <li>Processus de recrutement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Déclarations -->
+            <div class="tab-pane fade" id="declarations" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Guide Déclarations Obligatoires</h2>
+                <p class="lead mb-4">Maîtrisez l'ensemble des déclarations sociales, fiscales et réglementaires d'une entreprise.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.2) 100%); color: var(--declaration-color);">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Déclarations Sociales</h4>
+                            <p>DSN (Déclaration Sociale Nominative), paie, cotisations, accidents du travail, formation.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">DSN mensuelle</span>
+                                <span class="topic-badge">URSSAF</span>
+                                <span class="topic-badge">Retraite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.2) 100%); color: var(--declaration-color);">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <h4>Déclarations Fiscales</h4>
+                            <p>TVA, IS, CFE, CVAE, liasses fiscales, formulaires 2031, 2050-2059, 2067, etc.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Liasse fiscale</span>
+                                <span class="topic-badge">TVA CA3/CA12</span>
+                                <span class="topic-badge">Formulaires</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guide-card">
+                            <div class="card-icon" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.2) 100%); color: var(--declaration-color);">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h4>Déclarations Réglementaires</h4>
+                            <p>Registres obligatoires, BODACC, greffe, bénéficiaires effectifs, conventions réglementées.</p>
+                            <div class="badge-list">
+                                <span class="topic-badge">Registres</span>
+                                <span class="topic-badge">BODACC</span>
+                                <span class="topic-badge">Greffe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-calendar-day text-primary me-2"></i>Calendrier des Déclarations</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Périodicité</th>
+                                            <th>Déclaration</th>
+                                            <th>Échéance</th>
+                                            <th>Formulaire</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge bg-primary">Mensuelle</span></td>
+                                            <td>DSN (Déclaration Sociale)</td>
+                                            <td>5 ou 15 du mois suivant</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-primary">Mensuelle</span></td>
+                                            <td>TVA (Régime réel normal)</td>
+                                            <td>19 du mois suivant</td>
+                                            <td>CA12</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-warning">Trimestrielle</span></td>
+                                            <td>TVA (Régime réel simplifié)</td>
+                                            <td>Dernier jour mois suivant trimestre</td>
+                                            <td>CA3</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success">Annuelle</span></td>
+                                            <td>Impôt sur les sociétés</td>
+                                            <td>2ème mois suivant clôture</td>
+                                            <td>2031 + annexes</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success">Annuelle</span></td>
+                                            <td>CFE (Cotisation foncière)</td>
+                                            <td>15 décembre</td>
+                                            <td>1447-C</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success">Annuelle</span></td>
+                                            <td>CVAE</td>
+                                            <td>15 mai</td>
+                                            <td>1329-DEF</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="progress-tracker">
+                            <h5><i class="fas fa-tasks text-primary me-2"></i>Compétences Déclaratives</h5>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="dec1" onchange="updateProgress('dec1')">
+                                <label for="dec1">Maîtriser la DSN mensuelle</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="dec2" onchange="updateProgress('dec2')">
+                                <label for="dec2">Gérer les déclarations de TVA</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="dec3" onchange="updateProgress('dec3')">
+                                <label for="dec3">Préparer la liasse fiscale</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="dec4" onchange="updateProgress('dec4')">
+                                <label for="dec4">Déclarer les impôts locaux</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="dec5" onchange="updateProgress('dec5')">
+                                <label for="dec5">Tenir les registres obligatoires</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card">
+                    <h4><i class="fas fa-exclamation-circle text-danger me-2"></i>Sanctions et Pénalités</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Retards de déclaration :</h6>
+                            <ul>
+                                <li><strong>TVA</strong> : 10% du montant dus + 0,4% par mois de retard</li>
+                                <li><strong>IS</strong> : 10% de l'impôt dus + 0,4% par mois</li>
+                                <li><strong>DSN</strong> : 0,5% des cotisations (min 15€ par salarié)</li>
+                                <li><strong>CFE/CVAE</strong> : 10% de l'impôt + majorations</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Oublis et erreurs :</h6>
+                            <ul>
+                                <li><strong>Omission de déclaration</strong> : 40% de l'impôt éludé</li>
+                                <li><strong>Sous-évaluation</strong> : 40% de la différence</li>
+                                <li><strong>Manquement délibéré</strong> : 80% de l'impôt éludé</li>
+                                <li><strong>Fraude fiscale</strong> : jusqu'à 500 000€ et 5 ans de prison</li>
+                            </ul>
+                            <p class="text-muted small mt-2"><i class="fas fa-info-circle me-1"></i>Les sanctions sont cumulables avec les intérêts de retard (0,2% par mois).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap 3 ans -->
+            <div class="tab-pane fade" id="roadmap" role="tabpanel" tabindex="0">
+                <h2 class="mb-4">Roadmap sur 3 Ans</h2>
+                <p class="lead mb-4">Votre parcours détaillé pour devenir auditrice financière ou DAF en 3 ans, étape par étape.</p>
+                
+                <div class="roadmap-container mb-5">
+                    <div class="roadmap-step completed">
+                        <div class="duration">Année 1 - Renforcement des bases (2024)</div>
+                        <h5>Phase 1 : Consolidation des fondamentaux</h5>
+                        <ul>
+                            <li><strong>Mois 1-3</strong> : Maîtrise approfondie de la comptabilité générale</li>
+                            <li><strong>Mois 4-6</strong> : Perfectionnement en analyse financière</li>
+                            <li><strong>Mois 7-9</strong> : Initiation à l'audit et contrôle interne</li>
+                            <li><strong>Mois 10-12</strong> : Fiscalité d'entreprise et déclarations</li>
+                        </ul>
+                        <div class="mt-2">
+                            <span class="badge bg-success me-2">DCG en cours</span>
+                            <span class="badge bg-info">Stage en cabinet comptable</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step current">
+                        <div class="duration">Année 2 - Spécialisation (2025)</div>
+                        <h5>Phase 2 : Acquisition d'expertise</h5>
+                        <ul>
+                            <li><strong>Trimestre 1</strong> : Audit financier (normes ISA, procédures)</li>
+                            <li><strong>Trimestre 2</strong> : Contrôle de gestion et tableaux de bord</li>
+                            <li><strong>Trimestre 3</strong> : Gestion de trésorerie et financement</li>
+                            <li><strong>Trimestre 4</strong> : Fiscalité approfondie et optimisation</li>
+                        </ul>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-2">DSCG débuté</span>
+                            <span class="badge bg-warning">Stage en cabinet d'audit</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="duration">Année 3 - Professionnalisation (2026)</div>
+                        <h5>Phase 3 : Accès aux postes cibles</h5>
+                        <ul>
+                            <li><strong>Semestre 1</strong> : Expérience en audit financier (cabinet ou interne)</li>
+                            <li><strong>Semestre 2</strong> : Prise de responsabilités managériales</li>
+                            <li><strong>Fin d'année</strong> : Poste d'auditrice confirmée ou adjointe DAF</li>
+                        </ul>
+                        <div class="mt-2">
+                            <span class="badge bg-success me-2">DSCG obtenu</span>
+                            <span class="badge bg-danger">Certifications professionnelles</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="duration">Au-delà : Évolution de carrière (2027+)</div>
+                        <h5>Phase 4 : Accès à la direction</h5>
+                        <ul>
+                            <li><strong>Court terme</strong> : Auditrice financière senior / Manager audit</li>
+                            <li><strong>Moyen terme</strong> : Responsable contrôle de gestion / Contrôleur financier</li>
+                            <li><strong>Long terme</strong> : Directrice Administrative et Financière (DAF)</li>
+                        </ul>
+                        <div class="mt-2">
+                            <span class="badge bg-dark">Executive MBA option Finance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-graduation-cap text-primary me-2"></i>Certifications Recommandées</h4>
+                            <div class="mb-3">
+                                <h6>Diplômes d'État :</h6>
+                                <ul>
+                                    <li><strong>DCG</strong> (Diplôme de Comptabilité et Gestion) - Niveau Licence</li>
+                                    <li><strong>DSCG</strong> (Diplôme Supérieur de Comptabilité et Gestion) - Niveau Master</li>
+                                    <li><strong>DEC</strong> (Diplôme d'Expertise Comptable) - Après 3 ans de stage</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Certifications internationales :</h6>
+                                <ul>
+                                    <li><strong>CIA</strong> (Certified Internal Auditor)</li>
+                                    <li><strong>CPA</strong> (Certified Public Accountant)</li>
+                                    <li><strong>CFA</strong> (Chartered Financial Analyst)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Formations courtes :</h6>
+                                <ul>
+                                    <li>Formation DAF (IFG, Cegos, etc.)</li>
+                                    <li>Certification en contrôle de gestion</li>
+                                    <li>Formation en fiscalité approfondie</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="guide-card">
+                            <h4><i class="fas fa-briefcase text-success me-2"></i>Expériences Professionnelles Clés</h4>
+                            <div class="mb-3">
+                                <h6>Stages recommandés :</h6>
+                                <ul>
+                                    <li><strong>Année 1</strong> : Cabinet comptable (6 mois)</li>
+                                    <li><strong>Année 2</strong> : Cabinet d'audit (Big Four ou national) (6 mois)</li>
+                                    <li><strong>Année 3</strong> : Service financier d'entreprise (6-12 mois)</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Premiers postes cibles :</h6>
+                                <ul>
+                                    <li>Auditrice junior en cabinet d'audit</li>
+                                    <li>Contrôleuse de gestion junior</li>
+                                    <li>Assistante chef comptable</li>
+                                    <li>Analyste financière</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Postes à moyen terme :</h6>
+                                <ul>
+                                    <li>Auditrice financière confirmée</li>
+                                    <li>Responsable contrôle de gestion</li>
+                                    <li>Contrôleuse financière</li>
+                                    <li>Adjointe au DAF</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guide-card mt-4">
+                    <h4><i class="fas fa-chart-line text-warning me-2"></i>Suivi de Votre Progression</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-number" id="progressYear1">25%</div>
+                                <div class="stats-label">Année 1 accomplie</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-number" id="skillsMastered">40%</div>
+                                <div class="stats-label">Compétences maîtrisées</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-number" id="timeRemaining">900</div>
+                                <div class="stats-label">Jours restants</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Progression globale</span>
+                            <span id="globalProgress">33%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div id="globalProgressBar" class="progress-bar bg-success" style="width: 33%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="startQuiz()" title="Lancer le Quiz d'Évaluation">
+        <i class="fas fa-play"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Portail Guide Audit & Finance</h5>
+                    <p>Votre compagnon pour devenir auditrice financière ou DAF en 3 ans.</p>
+                    <p>Licence CGE • Objectif 2024-2027</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Ressources supplémentaires</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Quiz complet (120 questions)</a></li>
+                        <li><a href="#" class="text-light">Téléchargements pratiques</li>
+                        <li><a href="#" class="text-light">Actualités comptables et fiscales</a></li>
+                        <li><a href="#" class="text-light">Annuaires de formation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light my-3">
+            <div class="text-center">
+                <small>&copy; 2024 Portail Guide Audit & Finance. Tous droits réservés.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Fonction pour démarrer le quiz
+        function startQuiz() {
+            alert("Redirection vers le quiz d'évaluation complet...\n\nDans une version réelle, cette fonction ouvrirait le quiz dans un nouvel onglet.");
+            // window.open('quiz-audit-finance.html', '_blank');
+        }
+        
+        // Mise à jour de la progression
+        function updateProgress(checkboxId) {
+            const checkbox = document.getElementById(checkboxId);
+            const checklistItem = checkbox.closest('.checklist-item');
+            
+            if (checkbox.checked) {
+                checklistItem.classList.add('completed');
+                updateGlobalProgress();
+            } else {
+                checklistItem.classList.remove('completed');
+                updateGlobalProgress();
+            }
+        }
+        
+        // Calcul de la progression globale
+        function updateGlobalProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checkedCount = 0;
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checkedCount++;
+            });
+            
+            const totalCheckboxes = checkboxes.length;
+            const progressPercentage = totalCheckboxes > 0 ? Math.round((checkedCount / totalCheckboxes) * 100) : 0;
+            
+            document.getElementById('globalProgress').textContent = progressPercentage + '%';
+            document.getElementById('globalProgressBar').style.width = progressPercentage + '%';
+            document.getElementById('skillsMastered').textContent = progressPercentage + '%';
+        }
+        
+        // Calcul de l'impôt sur les sociétés
+        function calculateTax() {
+            const result = parseFloat(document.getElementById('fiscalResult').value) || 0;
+            const reintegrations = parseFloat(document.getElementById('fiscalReintegrations').value) || 0;
+            const deductions = parseFloat(document.getElementById('fiscalDeductions').value) || 0;
+            
+            // Calcul du résultat fiscal
+            const fiscalResult = result + reintegrations - deductions;
+            
+            // Calcul de l'IS (taux normal 25% sur la totalité depuis 2022 pour les PME)
+            let tax = fiscalResult * 0.25;
+            
+            // Pour les PME, taux réduit sur les premiers 42 500€
+            if (fiscalResult <= 42500) {
+                tax = fiscalResult * 0.15;
+            }
+            
+            const resultDiv = document.getElementById('taxResult');
+            resultDiv.innerHTML = `
+                <strong>Résultat fiscal :</strong> ${fiscalResult.toLocaleString('fr-FR')} €<br>
+                <strong>IS à payer :</strong> ${tax.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €<br>
+                <small>Pour une PME, taux réduit à 15% sur les premiers 42 500€, puis 25% au-delà.</small>
+            `;
+            resultDiv.classList.remove('d-none');
+        }
+        
+        // Mise à jour du tableau de bord DAF
+        function updateDashboard() {
+            const ca = parseFloat(document.getElementById('caInput').value) || 0;
+            const netResult = parseFloat(document.getElementById('netResultInput').value) || 0;
+            const cash = parseFloat(document.getElementById('cashInput').value) || 0;
+            const debt = parseFloat(document.getElementById('debtInput').value) || 0;
+            const equity = parseFloat(document.getElementById('equityInput').value) || 0;
+            const bfr = parseFloat(document.getElementById('bfrInput').value) || 0;
+            
+            // Calcul des ratios
+            const roe = (netResult / equity) * 100; // Return on Equity
+            const debtRatio = (debt / equity) * 100; // Ratio d'endettement
+            const netMargin = (netResult / ca) * 100; // Marge nette
+            const cashCoverage = (cash / bfr) * 100; // Couverture du BFR par la trésorerie
+            
+            const resultsDiv = document.getElementById('dashboardResults');
+            resultsDiv.innerHTML = `
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center p-2 bg-light rounded">
+                            <div class="fw-bold fs-5">${roe.toFixed(1)}%</div>
+                            <small>ROE (Rentabilité CP)</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center p-2 bg-light rounded">
+                            <div class="fw-bold fs-5">${debtRatio.toFixed(0)}%</div>
+                            <small>Endettement</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center p-2 bg-light rounded">
+                            <div class="fw-bold fs-5">${netMargin.toFixed(1)}%</div>
+                            <small>Marge nette</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center p-2 bg-light rounded">
+                            <div class="fw-bold fs-5">${cashCoverage.toFixed(0)}%</div>
+                            <small>Couverture BFR</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h6>Analyse :</h6>
+                    <ul>
+                        <li>${roe > 10 ? '✅' : '⚠️'} La rentabilité des capitaux propres est ${roe > 10 ? 'bonne' : 'à améliorer'} (>10% recommandé)</li>
+                        <li>${debtRatio < 100 ? '✅' : '⚠️'} Le niveau d'endettement est ${debtRatio < 100 ? 'acceptable' : 'élevé'} (<100% recommandé)</li>
+                        <li>${netMargin > 5 ? '✅' : '⚠️'} La marge nette est ${netMargin > 5 ? 'correcte' : 'faible'} (>5% recommandé)</li>
+                        <li>${cashCoverage > 100 ? '✅' : '⚠️'} La trésorerie ${cashCoverage > 100 ? 'couvre' : 'ne couvre pas'} le BFR (>100% recommandé)</li>
+                    </ul>
+                </div>
+            `;
+        }
+        
+        // Initialisation de la progression globale
+        document.addEventListener('DOMContentLoaded', function() {
+            updateGlobalProgress();
+            
+            // Initialisation des tooltips Bootstrap
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Calcul des jours restants (à partir du 1er janvier 2024)
+            const startDate = new Date('2024-01-01');
+            const endDate = new Date('2026-12-31');
+            const today = new Date();
+            
+            const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+            const daysPassed = Math.ceil((today - startDate) / (1000 * 60 * 60 * 24));
+            const daysRemaining = totalDays - daysPassed;
+            
+            document.getElementById('timeRemaining').textContent = daysRemaining > 0 ? daysRemaining : 0;
+            
+            // Progression de l'année 1 (sur 1095 jours au total sur 3 ans)
+            const year1Progress = Math.min(Math.ceil((daysPassed / 1095) * 100), 100);
+            document.getElementById('progressYear1').textContent = year1Progress + '%';
+        });
+        
+        // Gestion des onglets - sauvegarde de l'onglet actif
+        document.addEventListener('DOMContentLoaded', function() {
+            const triggerTabList = [].slice.call(document.querySelectorAll('#guideTabs button'));
+            triggerTabList.forEach(function (triggerEl) {
+                triggerEl.addEventListener('click', function (event) {
+                    const tabId = triggerEl.getAttribute('data-bs-target').substring(1);
+                    localStorage.setItem('activeTab', tabId);
+                });
+            });
+            
+            // Restaurer l'onglet actif
+            const activeTab = localStorage.getItem('activeTab');
+            if (activeTab) {
+                const tabTrigger = document.querySelector(`#guideTabs button[data-bs-target="#${activeTab}"]`);
+                if (tabTrigger) {
+                    new bootstrap.Tab(tabTrigger).show();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
